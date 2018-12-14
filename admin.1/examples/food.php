@@ -164,12 +164,12 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
-                      $sql = "SELECT Fid, Fname, Fprice from FOOD";
+                      $sql = "SELECT FID, Fname, Fprice from FOOD";
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>".$row["Fid"] ."</td><td>". $row["Fname"] ."</td><td>". $row["Fprice"] ."</td></tr>";
+                          echo "<tr><td>".$row["FID"] ."</td><td>". $row["Fname"] ."</td><td>". $row["Fprice"] ."</td></tr>";
                         }
                       }
                       else{

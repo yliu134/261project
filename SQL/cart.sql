@@ -1,39 +1,47 @@
-CREATE TABLE `orders` (
-  `order_id` int(11) NOT NULL,
-  `order_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `order_name` varchar(255) NOT NULL,
-  `order_email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+create table FOOD (
+FID INT NOT NULL,
+Fname VARCHAR(100) NOT NULL,
+Fprice FLOAT NOT NULL,
+Primary key (FID)
+);
 
-CREATE TABLE `orders_items` (
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+create table CUSTOMER (
+CID INT NOT NULL,
+Username VARCHAR(100) NOT NULL,
+Pnum VARCHAR(100) NOT NULL,
+Password VARCHAR(100) NOT NULL,
+Primary key (CID)
+);
 
-CREATE TABLE `products` (
-  `product_id` int(11) NOT NULL,
-  `product_name` varchar(255) NOT NULL,
-  `product_image` varchar(255) DEFAULT NULL,
-  `product_description` text,
-  `product_price` decimal(10,2) NOT NULL DEFAULT '0.00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`),
-  ADD KEY `name` (`order_name`),
-  ADD KEY `email` (`order_email`),
-  ADD KEY `order_date` (`order_date`);
-
-ALTER TABLE `orders_items`
-  ADD PRIMARY KEY (`order_id`,`product_id`);
-
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `name` (`product_name`);
-
-ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
-
-ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+create table DELIVERY_GROUP (
+LocID INT NOT NULL,
+Lname VARCHAR(100) NOT NULL,
+Primary key (LocID)
+);
+create table ORDERS (
+Onum INT NOT NULL,
+Time DATETIME NOT NULL,
+Addr TEXT NOT NULL,
+CID INT NOT NULL,
+LocID INT NOT NULL,
+Primary key (Onum),
+foreign key (LocID) references DELIVERY_GROUP(LocID)
+ON DELETE RESTRICT
+on update RESTRICT
+,
+foreign key (CID) references CUSTOMER(CID)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+create table ITEM (
+Onum INT NOT NULL,
+FID INT NOT NULL,
+Quantity INT NOT NULL,
+foreign key (Onum) references ORDERS(Onum)
+on delete CASCADE
+ON UPDATE CASCADE  ,
+foreign key (FID) references FOOD(FID)
+ON DELETE RESTRICT
+ON UPDATE RESTRICT ,
+Primary key (Onum, FID)
+);

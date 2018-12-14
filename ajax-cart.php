@@ -36,10 +36,10 @@ switch ($_POST['req']) {
   case "add":
     // ITEMS WILL BE STORED IN THE ORDER OF
     // $_SESSION['cart'][PRODUCT ID] = QUANTITY
-    if (is_numeric($_SESSION['cart'][$_POST['FID']])) {
-      $_SESSION['cart'][$_POST['FID']] ++;
+    if (is_numeric($_SESSION['cart'][$_POST['product_id']])) {
+      $_SESSION['cart'][$_POST['product_id']] ++;
     } else {
-      $_SESSION['cart'][$_POST['FID']] = 1;
+      $_SESSION['cart'][$_POST['product_id']] = 1;
     }
     echo "Item added to cart";
     break;
@@ -92,9 +92,9 @@ switch ($_POST['req']) {
   // CHANGE QTY
   case "change":
     if ($_POST['qty'] == 0) {
-      unset($_SESSION['cart'][$_POST['FID']]);
+      unset($_SESSION['cart'][$_POST['product_id']]);
     } else {
-      $_SESSION['cart'][$_POST['FID']] = $_POST['qty'];
+      $_SESSION['cart'][$_POST['product_id']] = $_POST['qty'];
     }
     echo "Quantity updated";
     break;

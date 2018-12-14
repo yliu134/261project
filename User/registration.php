@@ -19,12 +19,10 @@ if(!empty($sessData['status']['msg'])){
     <?php echo !empty($statusMsg)?'<p class="'.$statusMsgType.'">'.$statusMsg.'</p>':''; ?>
     <div class="regisFrm">
         <form action="userAccount.php" method="post">
-            <input type="text" name="first_name" placeholder="FIRST NAME" required="">
-            <input type="text" name="last_name" placeholder="LAST NAME" required="">
-            <input type="email" name="email" placeholder="EMAIL" required="">
-            <input type="text" name="phone" placeholder="PHONE NUMBER" required="">
-            <input type="password" name="password" placeholder="PASSWORD" required="">
-            <input type="password" name="confirm_password" placeholder="CONFIRM PASSWORD" required="">
+            <input type="text" name="Username" placeholder="USER NAME" required="">
+            <input type="text" name="Pnum" placeholder="PHONE NUMBER" required="">
+            <input type="password" name="Password" placeholder="PASSWORD" required="">
+            <input type="password" name="Confirm_password" placeholder="CONFIRM PASSWORD" required="">
             <div class="send-button">
                 <input type="submit" name="signupSubmit" value="CREATE ACCOUNT">
             </div>

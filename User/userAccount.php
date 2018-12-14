@@ -6,37 +6,30 @@ include 'user.php';
 $user = new User();
 if(isset($_POST['signupSubmit'])){
     //check whether user details are empty
-    if(!empty($_POST['first_name']) && !empty($_POST['last_name']) && !empty($_POST['email']) && !empty($_POST['phone']) && !empty($_POST['password']) && !empty($_POST['confirm_password'])){
+    if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Username']) && !empty($_POST['Confirm_password'])){
         //password and confirm password comparison
-        if($_POST['password'] !== $_POST['confirm_password']){
+        if($_POST['Password'] !== $_POST['Confirm_password']){
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = 'Confirm password must match with the password.';
         }else{
-            //check whether user exists in the database
-            $prevCon['where'] = array('email'=>$_POST['email']);
-            $prevCon['return_type'] = 'count';
-            $prevUser = $user->getRows($prevCon);
-            if($prevUser > 0){
-                $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = 'Email already exists, please use another email.';
+
+            //insert user data in the database
+            $userData = array(
+				'Password' => $_POST['Password'],
+                'Username' => $_POST['Username'],
+                'Pnum' => $_POST['Pnum']
+            );
+            $insert = $user->insert($userData);
+			$userData['CID'] = mysql_insert_id();
+            //set status based on data insert
+            if($insert){
+                $sessData['status']['type'] = 'success';
+                $sessData['status']['msg'] = 'You have registered successfully, log in with your credentials.';
             }else{
-                //insert user data in the database
-                $userData = array(
-					'CID' => $_POST['CID'],
-                    'Password' => $_POST['Password'],
-                    'Username' => $_POST['Username'],
-                    'Pnum' => $_POST['Pnum']
-                );
-                $insert = $user->insert($userData);
-                //set status based on data insert
-                if($insert){
-                    $sessData['status']['type'] = 'success';
-                    $sessData['status']['msg'] = 'You have registered successfully, log in with your credentials.';
-                }else{
-                    $sessData['status']['type'] = 'error';
-                    $sessData['status']['msg'] = 'Some problem occurred, please try again.';
-                }
+                $sessData['status']['type'] = 'error';
+                $sessData['status']['msg'] = 'Some problem occurred, please try again.';
             }
+            
         }
     }else{
         $sessData['status']['type'] = 'error';
@@ -49,11 +42,11 @@ if(isset($_POST['signupSubmit'])){
     header("Location:".$redirectURL);
 }elseif(isset($_POST['loginSubmit'])){
     //check whether login details are empty
-    if(!empty($_POST['email']) && !empty($_POST['password'])){
+    if(!empty($_POST['CID']) && !empty($_POST['Password'])){
     	 //get user data from user class
         $conditions['where'] = array(
-            'email' => $_POST['email'],
-            'password' => md5($_POST['password']),
+            'CID' => $_POST['CID'],
+            'Password' => md5($_POST['Password']),
             'status' => '1'
         );
         $conditions['return_type'] = 'single';

@@ -1,5 +1,14 @@
 <?php
 /* [INIT] */
+
+
+function console_log( $data ){
+  echo '<script>';
+  echo 'console.log('. json_encode( $data ) .')';
+  echo '</script>';
+}
+
+
 session_start();
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
 require PATH_LIB . "lib-db.php";
@@ -58,6 +67,7 @@ switch ($_POST['req']) {
         $sub = $qty * $products[$id]['Fprice'];
         $total += $sub;
         // THE PRODUCT
+        console_log($_SESSION['cart']);
         printf("<tr><td><input id='qty_%u' onchange='cart.change(%u);' type='number' value='%u'/></td><td>%s</td><td>$%0.2f</td></tr>", $id, $id, $qty, $products[$id]['Fname'], $sub
         );
       }

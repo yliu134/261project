@@ -160,7 +160,7 @@
 						
 						$sql = "USE dpan6_3;";
 						if ($conn->query($sql) === TRUE) {
-						   // echo "using Database tbiswas2_company";
+						   echo "using Database tbiswas2_company";
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}

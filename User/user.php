@@ -8,10 +8,10 @@
  */
 class User{
     private $dbHost     = "localhost";
-    private $dbUsername = "root";
-    private $dbPassword = "";
-    private $dbName     = "codexworld";
-    private $userTbl    = "users";
+    private $dbUsername = "dpan6";
+    private $dbPassword = "%NNN5m-A";
+    private $dbName     = "dpan6_3";
+    private $userTbl    = "CUSTOMER";
 
     public function __construct(){
         if(!isset($this->db)){

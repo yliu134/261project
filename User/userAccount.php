@@ -103,7 +103,7 @@ if(!empty($sessData['status']['msg'])){
 
 <div class="container">
     <?php
-        if(!empty($sessData['userLoggedIn']) && !empty($sessData['userID'])){
+        if(!empty($sessData['userLoggedIn']) && !empty($sessData['CID'])){
             include 'user.php';
             $user = new User();
             $conditions['where'] = array(
@@ -124,8 +124,8 @@ if(!empty($sessData['status']['msg'])){
     <?php echo !empty($statusMsg)?'<p class="'.$statusMsgType.'">'.$statusMsg.'</p>':''; ?>
     <div class="regisFrm">
         <form action="userAccount.php" method="post">
-            <input type="email" name="email" placeholder="EMAIL" required="">
-            <input type="password" name="password" placeholder="PASSWORD" required="">
+            <input type="" name="CID" placeholder="YOUR ID" required="">
+            <input type="password" name="Password" placeholder="PASSWORD" required="">
             <div class="send-button">
                 <input type="submit" name="loginSubmit" value="LOGIN">
             </div>

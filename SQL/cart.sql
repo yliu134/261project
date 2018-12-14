@@ -1,12 +1,12 @@
 create table FOOD (
-FID INT NOT NULL,
+FID INT NOT NULL AUTO_INCREMENT,
 Fname VARCHAR(100) NOT NULL,
 Fprice FLOAT NOT NULL,
 Primary key (FID)
 );
 
 create table CUSTOMER (
-CID INT NOT NULL,
+CID INT NOT NULL AUTO_INCREMENT,
 Username VARCHAR(100) NOT NULL,
 Pnum VARCHAR(100) NOT NULL,
 Password VARCHAR(100) NOT NULL,
@@ -14,12 +14,12 @@ Primary key (CID)
 );
 
 create table DELIVERY_GROUP (
-LocID INT NOT NULL,
+LocID INT NOT NULL AUTO_INCREMENT,
 Lname VARCHAR(100) NOT NULL,
 Primary key (LocID)
 );
 create table ORDERS (
-Onum INT NOT NULL,
+Onum INT NOT NULL AUTO_INCREMENT,
 Time DATETIME NOT NULL,
 Addr TEXT NOT NULL,
 CID INT NOT NULL,
@@ -34,7 +34,7 @@ foreign key (CID) references CUSTOMER(CID)
         ON UPDATE CASCADE
 );
 create table ITEM (
-Onum INT NOT NULL,
+Onum INT NOT NULL AUTO_INCREMENT,
 FID INT NOT NULL,
 Quantity INT NOT NULL,
 foreign key (Onum) references ORDERS(Onum)

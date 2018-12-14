@@ -1,7 +1,7 @@
 <?php
 /* [DATABASE SETTINGS] */
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'dpan6_2');
+define('DB_NAME', 'dpan6_3');
 define('DB_CHARSET', 'utf8');
 define('DB_USER', 'dpan6');
 define('DB_PASSWORD', '%NNN5m-A');

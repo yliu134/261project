@@ -153,7 +153,7 @@
                       <?php
 
 
-                      $conn = mysqli_connect("localhost", "dpan6", "%NNNSm-A");
+                      $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
                       if($conn->connect_error){
                         die("connection falied:". $conn-> connect_error);
                       }
@@ -169,7 +169,7 @@
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>".$row["FID"] ."</td><td>". $row["Fname"] ."</td><td>". $row["Fprice"] ."</td></tr>";
+                          echo "<tr><td>". $row["FID"] ."</td><td>". $row["Fname"] ."</td><td>". $row["Fprice"] ."</td></tr>";
                         }
                       }
                       else{

@@ -24,7 +24,7 @@ class Cart extends DB {
     return $this->exec($sql, $cond);
   }
 
-  function pDel ($id) {
+  function pDel ($ID) {
   // pDel () : delete product
 
     $sql = "DELETE FROM `FOOD` WHERE `FID`=?";

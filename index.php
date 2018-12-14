@@ -42,10 +42,10 @@ $products = $cartLib->pGet();
           ?>
           <div class="pdt">
             <img src="images/<?= $row['product_image'] ?>"/>
-            <h3 class="pdtName"><?= $row['product_name'] ?></h3>
-            <div class="pdtPrice">$<?= $row['product_price'] ?></div>
+            <h3 class="pdtName"><?= $row['Fname'] ?></h3>
+            <div class="pdtPrice">$<?= $row['Fprice'] ?></div>
             <div class="pdtDesc"><?= $row['product_description'] ?></div>
-            <input class="pdtAdd" type="button" value="Add to cart" onclick="cart.add(<?= $row['product_id'] ?>);"/>
+            <input class="pdtAdd" type="button" value="Add to cart" onclick="cart.add(<?= $row['FID'] ?>);"/>
           </div>
         <?php
         }

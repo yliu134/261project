@@ -22,11 +22,10 @@ if(isset($_POST['signupSubmit'])){
             }else{
                 //insert user data in the database
                 $userData = array(
-                    'first_name' => $_POST['first_name'],
-                    'last_name' => $_POST['last_name'],
-                    'email' => $_POST['email'],
-                    'password' => md5($_POST['password']),
-                    'phone' => $_POST['phone']
+					'CID' => $_POST['CID'],
+                    'Password' => $_POST['Password'],
+                    'Username' => $_POST['Username'],
+                    'Pnum' => $_POST['Pnum']
                 );
                 $insert = $user->insert($userData);
                 //set status based on data insert
@@ -62,9 +61,9 @@ if(isset($_POST['signupSubmit'])){
         //set user data and status based on login credentials
         if($userData){
             $sessData['userLoggedIn'] = TRUE;
-            $sessData['userID'] = $userData['id'];
+            $sessData['CID'] = $userData['CID'];
             $sessData['status']['type'] = 'success';
-            $sessData['status']['msg'] = 'Welcome '.$userData['first_name'].'!';
+            $sessData['status']['msg'] = 'Welcome '.$userData['Username'].'!';
         }else{
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = 'Wrong email or password, please try again.';
@@ -115,16 +114,16 @@ if(!empty($sessData['status']['msg'])){
             include 'user.php';
             $user = new User();
             $conditions['where'] = array(
-                'id' => $sessData['userID'],
+                'CID' => $sessData['CID'],
             );
             $conditions['return_type'] = 'single';
             $userData = $user->getRows($conditions);
     ?>
-    <h2>Welcome <?php echo $userData['first_name']; ?>!</h2>
+    <h2>Welcome <?php echo $userData['Username']; ?>!</h2>
     <a href="userAccount.php?logoutSubmit=1" class="logout">Logout</a>
     <div class="regisFrm">
-        <p><b>Name: </b><?php echo $userData['first_name'].' '.$userData['last_name']; ?></p>
-        <p><b>Email: </b><?php echo $userData['email']; ?></p>
+        <p><b>Name: </b><?php echo $userData['Username']; ?></p>
+		<p><b>ID: </b><?php echo $userData['CID']; ?></p>
         <p><b>Phone: </b><?php echo $userData['phone']; ?></p>
     </div>
     <?php }else{ ?>

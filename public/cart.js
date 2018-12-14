@@ -43,7 +43,7 @@ var cart = {
       target : "ajax-cart.php",
       data : {
         req : "add",
-        product_id : id
+        FID : id
       },
       load : cart.count
     });
@@ -58,7 +58,7 @@ var cart = {
       target : "ajax-cart.php",
       data : {
         req : "change",
-        product_id : id,
+        FID : id,
         qty : qty
       },
       load : function () {

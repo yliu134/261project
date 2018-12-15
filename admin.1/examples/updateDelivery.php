@@ -213,7 +213,7 @@
               $conn -> close();
               ?>
               <div class="card-header">
-                <h7 class="title"><?php echo $FID; ?></h7>
+                <h7 class="title"><?php echo $LocID; ?></h7>
               </div>
             <div class="card-body">
                 <div class="row">

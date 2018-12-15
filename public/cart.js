@@ -75,7 +75,7 @@ var cart = {
       target : "ajax-cart.php",
       data : {
         req : "checkout",
-        CID : $SESSION['sessData']['CID'],
+        CID : $_SESSION['sessData']['CID'],
         Addr: document.getElementById("Addr").value
       },
       silent : 1,

@@ -216,12 +216,12 @@
               </div>
             <div class="card-body">
                 <div class="row">
-                  <div class="col-md-6 pr-md-1">
+        
                     <div class="form-group">
                       <label>Food Name</label>
                     <input type="text" class="form-control" name="fname" value="<?php echo $Fname; ?>">
                     </div>
-                  </div>
+
                   <div class="col-md-6 pl-md-1">
                     <div class="form-group">
                       <label>Food Price</label>

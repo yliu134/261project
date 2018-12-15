@@ -148,7 +148,7 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Search by food ID</h5>
+                <h5 class="title">Search by Delivery Group ID</h5>
               </div>
               <form action="./updateDelivery.php" method="POST">
               <div class="card-body">

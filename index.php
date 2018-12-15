@@ -1,7 +1,7 @@
 <?php
 /* [INIT] */
 session_start();
-if (!$sessData['userLoggedIn']){
+if (!$_SESSION['sessData'] || !$_SESSION['sessData']['userLoggedIn']){
     header("Location:User/login-reg.php");
 }
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";

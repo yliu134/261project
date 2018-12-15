@@ -6,6 +6,7 @@ if(!empty($sessData['status']['msg'])){
     $statusMsgType = $sessData['status']['type'];
     unset($_SESSION['sessData']['status']);
 }
+session_write_close();
 ?>
 <style>
     <?php
@@ -23,14 +24,10 @@ if(!empty($sessData['status']['msg'])){
             );
             $conditions['return_type'] = 'single';
             $userData = $user->getRows($conditions);
+            header("Location:../index.php");
+            session_write_close();
     ?>
-    <h2>Welcome <?php echo $userData['Username']; ?>!</h2>
-    <a href="userAccount.php?logoutSubmit=1" class="logout">Logout</a>
-    <div class="regisFrm">
-        <p><b>Name: </b><?php echo $userData['Username']; ?></p>
-		<p><b>ID: </b><?php echo $userData['CID']; ?></p>
-        <p><b>Phone: </b><?php echo $userData['phone']; ?></p>
-    </div>
+    
     <?php }else{ ?>
     <h2>Login to Your Account</h2>
     <?php echo !empty($statusMsg)?'<p class="'.$statusMsgType.'">'.$statusMsg.'</p>':''; ?>

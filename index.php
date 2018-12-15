@@ -53,7 +53,7 @@ session_write_close();
 </h1>
 
   <li>
-            <a href="User/login-reg.php">
+            <a href="userAccount.php?logoutSubmit=1">
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); 
               $_SESSION = [];
               ?>"></i>

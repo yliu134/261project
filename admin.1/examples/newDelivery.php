@@ -28,7 +28,7 @@
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./food.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Food</p>
@@ -56,13 +56,13 @@
         <div class="logo">
         </div>
         <ul class="nav">
-          <li>
+          <li >
             <a href="./newFood.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Add new food</p>
             </a>
           </li>
-          <li>
+          <li class="active ">
             <a href="./newDelivery.php">
               <i class="tim-icons icon-bus-front-12"></i>
               <p>Add new Delivery group</p>
@@ -128,63 +128,33 @@
       <!-- End Navbar -->
       <div class="content">
         <div class="row">
-          <div class="col-md-12">
-            <div class="card ">
+          <div class="col-md-8">
+            <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h5 class="title">New Delivery Group</h5>
               </div>
               <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table tablesorter " id="">
-                    <thead class=" text-primary">
-                      <tr>
-                        <th>
-                          ID
-                        </th>
-                        <th>
-                          Name
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <?php
-
-
-                      $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
-                      if($conn->connect_error){
-                        die("connection falied:". $conn-> connect_error);
-                      }
-
-						$sql = "USE dpan6_3;";
-						if ($conn->query($sql) === TRUE) {
-						   echo "using Database tbiswas2_company";
-						} else {
-						   echo "Error using  database: " . $conn->error;
-						}
-                      $sql = "SELECT FID, Fname, Fprice from FOOD";
-                      $result = $conn->query($sql);
-
-                      if($result -> num_rows > 0){
-                        while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["FID"] ."</td><td>". $row["Fname"] ."</td><td>". $row["Fprice"] ."</td></tr>";
-                        }
-                      }
-                      else{
-                        echo "0 result";
-                      }
-
-                      $conn -> close();
-                      ?>
-                    </tbody>
-                  </table>
-                </div>
+                <form>
+                  <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                      <div class="form-group">
+                        <label>Location Name</label>
+                        <input type="text" class="form-control" placeholder="Location Name">
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-fill btn-primary">Submit</button>
               </div>
             </div>
           </div>
+            </div>
+          </div>
         </div>
+      </div>
+
       </div>
     </div>
   </div>

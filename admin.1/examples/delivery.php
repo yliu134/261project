@@ -28,7 +28,7 @@
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./food.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Food</p>
@@ -40,13 +40,13 @@
               <p>Customers</p>
             </a>
           </li>
-          <li >
+          <li>
             <a href="./order.php">
               <i class="tim-icons icon-calendar-60"></i>
               <p>Orders</p>
             </a>
           </li>
-          <li >
+          <li class="active ">
             <a href="./delivery.php">
               <i class="tim-icons icon-bus-front-12"></i>
               <p><p>Delivery groups</p></p>
@@ -139,45 +139,118 @@
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                          ID
-                        </th>
-                        <th>
                           Name
                         </th>
                         <th>
-                          Price
+                          Country
+                        </th>
+                        <th>
+                          City
+                        </th>
+                        <th class="text-center">
+                          Salary
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <?php
-
-
-                      $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
-                      if($conn->connect_error){
-                        die("connection falied:". $conn-> connect_error);
-                      }
-
-						$sql = "USE dpan6_3;";
-						if ($conn->query($sql) === TRUE) {
-						   echo "using Database tbiswas2_company";
-						} else {
-						   echo "Error using  database: " . $conn->error;
-						}
-                      $sql = "SELECT FID, Fname, Fprice from FOOD";
-                      $result = $conn->query($sql);
-
-                      if($result -> num_rows > 0){
-                        while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["FID"] ."</td><td>". $row["Fname"] ."</td><td>". $row["Fprice"] ."</td></tr>";
-                        }
-                      }
-                      else{
-                        echo "0 result";
-                      }
-
-                      $conn -> close();
-                      ?>
+                      <tr>
+                        <td>
+                          Dakota Rice
+                        </td>
+                        <td>
+                          Niger
+                        </td>
+                        <td>
+                          Oud-Turnhout
+                        </td>
+                        <td class="text-center">
+                          $36,738
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Minerva Hooper
+                        </td>
+                        <td>
+                          Curaçao
+                        </td>
+                        <td>
+                          Sinaai-Waas
+                        </td>
+                        <td class="text-center">
+                          $23,789
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Sage Rodriguez
+                        </td>
+                        <td>
+                          Netherlands
+                        </td>
+                        <td>
+                          Baileux
+                        </td>
+                        <td class="text-center">
+                          $56,142
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Philip Chaney
+                        </td>
+                        <td>
+                          Korea, South
+                        </td>
+                        <td>
+                          Overland Park
+                        </td>
+                        <td class="text-center">
+                          $38,735
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Doris Greene
+                        </td>
+                        <td>
+                          Malawi
+                        </td>
+                        <td>
+                          Feldkirchen in Kärnten
+                        </td>
+                        <td class="text-center">
+                          $63,542
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Mason Porter
+                        </td>
+                        <td>
+                          Chile
+                        </td>
+                        <td>
+                          Gloucester
+                        </td>
+                        <td class="text-center">
+                          $78,615
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          Jon Porter
+                        </td>
+                        <td>
+                          Portugal
+                        </td>
+                        <td>
+                          Gloucester
+                        </td>
+                        <td class="text-center">
+                          $98,615
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>

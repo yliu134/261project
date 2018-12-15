@@ -84,6 +84,7 @@ class User{
      */
     public function insert($data){
         if(!empty($data) && is_array($data)){
+            echo("test2");
             $columns = '';
             $values  = '';
             $i = 0;
@@ -98,6 +99,8 @@ class User{
             //return $insert?$this->db->insert_id:false;
             return $insert?false:$this->db->insert_id;
         }else{
+            echo("test1");
+
             return false;
         }
     }

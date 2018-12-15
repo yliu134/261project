@@ -132,7 +132,7 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Select by food name</h5>
+                <h5 class="title">Search by food name</h5>
               </div>
               <form action="./food.php" method="POST">
               <div class="card-body">
@@ -155,7 +155,7 @@
             </div>
 
       <!-- End Select -->
-      
+
         <div class="row">
           <div class="col-md-12">
             <div class="card ">

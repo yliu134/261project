@@ -31,15 +31,16 @@
           <li>
             <a href="../../index.php">
               <i class="tim-icons icon-bag-16"></i>
-              <p>Go Back </p>
+              <p>Go Back</p>
             </a>
           </li>
+
         </ul>
       </div>
     </div>
     <div class="main-panel">
-
-
+      <!-- Navbar -->
+      
       <div class="content">
         <div class="row">
           <div class="col-md-12">
@@ -82,9 +83,7 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
-                      echo"$_SESSION['sessData']['CID']";
-                      // $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID =  $_SESSION['sessData']['CID']";
-                      $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = 1";
+                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = 1";
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){
@@ -125,7 +124,7 @@
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
- <!--  <script>
+  <script>
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -235,7 +234,7 @@
         });
       });
     });
-  </script> -->
+  </script>
 </body>
 
 </html>

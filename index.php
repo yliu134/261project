@@ -44,6 +44,7 @@ $products = $cartLib->pGet();
           hello 
  <script>
           document.write($_SESSION['sessData']['CID'])
+          document.write("你妈")
 
            </script></h1>
     </header>

@@ -43,9 +43,8 @@ $products = $cartLib->pGet();
 
            <li>
             <a href="./thank-you.php">
-              <i class="tim-icons icon-bus-front-12" onclick ="<?php session_destroy();?>"></i>
+              <i class="tim-icons icon-bus-front-12"></i>
               <p>Log out</p>
-              
             </a>
           </li>
 

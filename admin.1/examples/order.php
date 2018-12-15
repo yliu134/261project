@@ -171,12 +171,12 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
-                      $sql = "SELECT Onum, Addr, Date, Time, LoclID, CID from ORDERS";
+                      $sql = "SELECT Onum, Addr, Date, Time, LocID, CID from ORDERS";
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Date"] ."</td><td>". $row["Time"] ."</td><td>". $row["LoclID"] ."</td><td>". $row["CID"] ."</td></tr>";
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Date"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
                         }
                       }
                       else{

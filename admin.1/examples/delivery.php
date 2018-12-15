@@ -149,7 +149,6 @@
                     <tbody>
                       <?php
 
-
                       $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
                       if($conn->connect_error){
                         die("connection falied:". $conn-> connect_error);
@@ -159,14 +158,14 @@
 						if ($conn->query($sql) === TRUE) {
 
 						} else {
-						   echo "Error using  database: " . $conn->error;
+						   echo "Error using database: " . $conn->error;
 						}
-                      $sql = "SELECT LoclID, Lname from DELIVERY_GROUP";
+                      $sql = "SELECT LocID, Lname from DELIVERY_GROUP";
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["LoclID"] ."</td><td>". $row["Lname"] ."</td></tr>";
+                          echo "<tr><td>". $row["LocID"] ."</td><td>". $row["Lname"] ."</td></tr>";
                         }
                       }
                       else{

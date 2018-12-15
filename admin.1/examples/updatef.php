@@ -17,7 +17,7 @@
   echo "Error using database: " . $conn->error;
   }
 
-$sql2="UPDATE FOOD SET Fname = '$_POST[fname]', Fprice= '$_POST[fprice]' WHERE CustomerID = $_POST[fid];";
+$sql2="UPDATE FOOD SET Fname = '$_POST[fname]', Fprice= '$_POST[fprice]' WHERE FID = $_POST[fid];";
 
 
 

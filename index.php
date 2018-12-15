@@ -42,7 +42,7 @@ $products = $cartLib->pGet();
           </li>
  <h1>
           hello 
- <script type="text/javascript">
+ <script>
           document.write($_SESSION['sessData']['CID'])
 
            </script></h1>

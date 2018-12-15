@@ -28,7 +28,7 @@
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./food.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Food</p>
@@ -148,7 +148,7 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Search by food ID</h5>
+                <h5 class="title">Search by Delivery Group ID</h5>
               </div>
               <form action="./updateDelivery.php" method="POST">
               <div class="card-body">
@@ -215,7 +215,7 @@
               </div>
             <div class="card-body">
                 <div class="row">
-                  <div class="col-md-6 pl-md-1">
+                  <div class="col-md-6 pr-md-1">
                     <div class="form-group">
                       <label>Delivery Group Name</label>
                       <input type="text" class="form-control" name="lname" value="<?php echo $Lname; ?>">
@@ -225,7 +225,8 @@
                 <input type="hidden" name="lid" value="<?php echo $LocID; ?>">
             </div>
             <div class="card-footer">
-              <input type="submit" class="btn btn-fill btn-primary"/>
+              <input type="submit" name="update" class="btn btn-fill btn-primary" value="Update"/>
+              <input type="submit" name="delete" class="btn btn-fill btn-primary" value="Delete"/>
             </div>
           </form>
           </div>

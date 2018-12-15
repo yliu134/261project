@@ -16,8 +16,13 @@
   } else {
   echo "Error using database: " . $conn->error;
   }
+  if (isset($_POST['delete'])) {
+        $sql2="DELETE FROM DELIVERY_GROUP WHERE LocID = $_POST[lid];";
+    } else {
+        $sql2="UPDATE DELIVERY_GROUP SET Lname = '$_POST[lname]' WHERE LocID = $_POST[lid];";
+    }
 
-$sql2="UPDATE DELIVERY_GROUP SET Lname = '$_POST[lname]' WHERE LocID = $_POST[lid];";
+
 
 
 
@@ -29,8 +34,12 @@ if ($conn->query($sql2) === FALSE)
 
   }
 
-echo "1 deliery group updated";
 
+if (isset($_POST['delete'])) {
+      echo "1 deliery group deleted";
+  } else {
+      echo "1 deliery group updated";
+  }
 
 
 mysql_close($conn)

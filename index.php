@@ -42,9 +42,17 @@ $products = $cartLib->pGet();
           </li>
  <h1>
           hello 
+          <?php echo $_SESSION['sessData']['CID']; ?>
+</h1>
 
-          <?php echo $_SESSION['sessData']['CID'] ?>
- </h1>
+  <li>
+            <a href="thank-you.php">
+              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); ?>"></i>
+              <p>exit </p>
+            </a>
+          </li>
+
+
     </header>
 
     <!-- [PRODUCTS] -->	

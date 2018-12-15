@@ -40,6 +40,8 @@ $products = $cartLib->pGet();
               <p>My Orders</p>
             </a>
           </li>
+
+          hello $_SESSION['sessData']['CID']
     </header>
 
     <!-- [PRODUCTS] -->	

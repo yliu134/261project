@@ -66,7 +66,9 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     //store login status into the session
     $_SESSION['sessData'] = $sessData;
     //redirect to the home page
-    header("Location:login-reg.php");
+    $redirectURL = ($sessData['status']['type'] == 'success')?'../index.php':'login-reg.php';
+    //redirect to the home/registration page
+    header("Location:".$redirectURL);
 }elseif(!empty($_REQUEST['logoutSubmit'])){
     //remove session data
     unset($_SESSION['sessData']);

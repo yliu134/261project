@@ -180,10 +180,12 @@
                 $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
                 $result = $conn->query($sql);
                 if($result -> num_rows >0){
-                  $row = mysql_fetch_array($result);
-                  $FID = 'ss';
-                  $Fname = 'ssss';
-                  $Fprice = 'ccc';
+                  while($row = mysql_fetch_array($result))
+                  {
+                    $FID = $row['FID'];
+                    $Fname = $row['Fname'];
+                    $Fprice = $row['Fprice'];
+                  }
                   echo $FID;
                   echo $Fname;
                   echo $Fprice;

@@ -69,6 +69,22 @@
             </a>
           </li>
         </ul>
+        <div class="logo">
+        </div>
+        <ul class="nav">
+          <li>
+            <a href="./updateFood.php">
+              <i class="tim-icons icon-bag-16"></i>
+              <p>Update food</p>
+            </a>
+          </li>
+          <li  class="active ">
+            <a href="./updateDelivery.php">
+              <i class="tim-icons icon-bus-front-12"></i>
+              <p>Update Delivery group</p>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="main-panel">

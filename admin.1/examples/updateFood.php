@@ -28,7 +28,7 @@
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./food.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Food</p>
@@ -66,6 +66,22 @@
             <a href="./newDelivery.php">
               <i class="tim-icons icon-bus-front-12"></i>
               <p>Add new Delivery group</p>
+            </a>
+          </li>
+        </ul>
+        <div class="logo">
+        </div>
+        <ul class="nav">
+          <li class="active ">
+            <a href="./updateFood.php">
+              <i class="tim-icons icon-bag-16"></i>
+              <p>Update food</p>
+            </a>
+          </li>
+          <li>
+            <a href="./updateDelivery.php">
+              <i class="tim-icons icon-bus-front-12"></i>
+              <p>Update Delivery group</p>
             </a>
           </li>
         </ul>

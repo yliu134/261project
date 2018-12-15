@@ -5,7 +5,7 @@
 
   <?php
 
-
+  echo "!!!!!!!!!!!!!!!!!";
   $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
   if($conn->connect_error){
     die("connection falied:". $conn-> connect_error);
@@ -22,7 +22,7 @@ $sql="INSERT INTO FOOD (Fname, Fprice) VALUES ('$_POST[fname]','$_POST[fprice]')
 
 
 
-if (!mysql_query($sql,$con))
+if (!mysql_query($sql,$conn))
 
   {
 
@@ -34,7 +34,7 @@ echo "1 food added";
 
 
 
-mysql_close($con)
+mysql_close($conn)
 
 ?>
 

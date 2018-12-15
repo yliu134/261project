@@ -13,20 +13,26 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
         }else{
 
             //insert user data in the database
+            // $userData = array(
+            //     'Password' => $_POST['Password'],
+            //     'Username' => $_POST['Username'],
+            //     'Pnum' => $_POST['Pnum']
+            // );
             $userData = array(
-                'Password' => $_POST['Password'],
-                'Username' => $_POST['Username'],
-                'Pnum' => $_POST['Pnum']
+                'CID' => 200,
+                'Password' => 200,
+                'Username' => 'user_200',
+                'Pnum' => 200
             );
             $insert = $user->insert($userData);
             $userData['CID'] = mysql_insert_id();
             //set status based on data insert
             if($insert){
-                $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = $query;
-            }else{
                 $sessData['status']['type'] = 'success';
                 $sessData['status']['msg'] = $query;
+            }else{
+                $sessData['status']['type'] = 'error';
+                $sessData['status']['msg'] = $insert;
             }
             
         }

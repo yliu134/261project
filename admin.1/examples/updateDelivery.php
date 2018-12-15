@@ -225,8 +225,8 @@
                 <input type="hidden" name="lid" value="<?php echo $LocID; ?>">
             </div>
             <div class="card-footer">
-              <input type="submit" name="update" class="btn btn-fill btn-primary"/>
-              <input type="submit" name="delete" class="btn btn-fill btn-primary"/>
+              <input type="submit" name="update" class="btn btn-fill btn-primary" value="Update"/>
+              <input type="submit" name="delete" class="btn btn-fill btn-primary" value="Delete"/>
             </div>
           </form>
           </div>

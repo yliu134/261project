@@ -226,6 +226,7 @@
             </div>
             <div class="card-footer">
               <input type="submit" class="btn btn-fill btn-primary"/>
+              <input type="delete" class="btn btn-fill btn-primary"/>
             </div>
           </form>
           </div>

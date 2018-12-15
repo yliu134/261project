@@ -188,7 +188,7 @@
                         $result = $conn->query($sql);
                         if($result -> num_rows >0){
                           $row = mysql_fetch_row($result);
-                          echo "<label>Food Name</label><input type=\"text\" class=\"form-control\" name=\"fname\" placeholder=". $row["Fname"] ."></div></div><div class=\"col-md-6 pl-md-1\"><div class=\"form-group\"><label>Food Price</label><input type=\"number\" class=\"form-control\" name=\"fprice\" placeholder=". $row["Fprice"] .">";
+                          echo "<label>Food Name</label><input type=\"text\" class=\"form-control\" name=\"fname\" placeholder=\"". $row["Fname"] ."\"></div></div><div class=\"col-md-6 pl-md-1\"><div class=\"form-group\"><label>Food Price</label><input type=\"number\" class=\"form-control\" name=\"fprice\" placeholder=\"". $row["Fprice"] ."\">";
                         }
                         else{
                           echo "0 result";

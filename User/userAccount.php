@@ -23,6 +23,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
             if($insert){
                 $sessData['status']['type'] = 'success';
                 $sessData['status']['msg'] = 'Your userID is'.$userData['CID'];
+                $sessData['CID'] = $userData['CID'];
             }else{
                 $sessData['status']['type'] = 'error';
                 $sessData['status']['msg'] = 'Failed';

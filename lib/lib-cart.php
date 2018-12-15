@@ -33,11 +33,12 @@ class Cart extends DB {
   }
 
   /* [ORDERS] */
-  function oAdd ($Addr,$CID,$LocID) {
+  function oAdd ($CID, $Addr) {
   // oAdd () : create new order
   // ! READS DATA FROM SESSION CART !
 
     // Init
+    $LocID = 1;
     $this->start();
 
     // Create the order

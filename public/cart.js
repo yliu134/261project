@@ -74,9 +74,9 @@ var cart = {
     gen.ajax({
       target : "ajax-cart.php",
       data : {
-        req : "checkout"
-        // name : document.getElementById("co_name").value,
-        // email : document.getElementById("co_email").value
+        req : "checkout",
+        CID:$SSION['sessData']['CID'],
+         email : $sessData['CID']
       },
       silent : 1,
       load : function (res) {

@@ -112,8 +112,17 @@ switch ($_POST['req']) {
   //   }
   //   break;
 
-  case "checkout":      
-    if ($cartLib->oAdd($_POST['CID'], $_POST['Addr'])) {
+  // case "checkout":      
+  //   if ($cartLib->oAdd($_POST['CID'], $_POST['Addr'])) {
+  //     $_SESSION['cart'] = array();
+  //     echo "OK";
+  //   } else {
+  //     echo $cartLib->error;
+  //   }
+  //   break;
+
+      case "checkout":      
+    if ($cartLib->oAdd("test", "test2")) {
       $_SESSION['cart'] = array();
       echo "OK";
     } else {

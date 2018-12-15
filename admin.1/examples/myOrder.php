@@ -82,6 +82,7 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
+                      echo"$_SESSION['sessData']['CID']";
                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID =  $_SESSION['sessData']['CID']";
                       $result = $conn->query($sql);
 

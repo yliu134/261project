@@ -180,19 +180,19 @@
                 $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
                 $result = $conn->query($sql);
                 if($result -> num_rows >0){
-                  $row = mysql_fetch_row($result);
-                  $FID = $row["FID"];
-                  $Fname = $row["Fname"];
-                  $Fprice = $row["Fprice"];
+                  $row = mysql_fetch_assoc($result);
+                  $FID = $row[0];
+                  $Fname = $row[1];
+                  $Fprice = $row[2];
                   echo $FID;
                   echo $Fname;
                   echo $Fprice;
                 }
                 else{
-                  echo "0 result";
+                  echo "      0 result";
                 }
               }else{
-                echo "no such food exists";
+                echo "   no such food exists";
               }
 
               $conn -> close();
@@ -205,13 +205,13 @@
                   <div class="col-md-6 pr-md-1">
                     <div class="form-group">
                       <label>Food Name</label>
-                    <input type="text" class="form-control" name="fname" value='<?php echo $Fname; ?>'>
+                    <input type="text" class="form-control" name="fname" value="<?php echo $Fname; ?>">
                     </div>
                   </div>
                   <div class="col-md-6 pl-md-1">
                     <div class="form-group">
                       <label>Food Price</label>
-                      <input type="text" class="form-control" name="fprice" value='<?php echo $Fprice; ?>'>
+                      <input type="text" class="form-control" name="fprice" value="<?php echo $Fprice; ?>">
                     </div>
                   </div>
                 </div>

@@ -167,7 +167,7 @@
                 <div class="row">
                   <div class="col-md-6 pr-md-1">
                     <div class="form-group">
-                      <label>Food Name</label>
+
 
 
                       <?php
@@ -189,7 +189,7 @@
                         $id = 0;
                         if($result -> num_rows >0){
                           $id = $row["FID"];
-                          echo "<input type=\"text\" class=\"form-control\" name=\"fname\" placeholder=". $row["Fname"] ."></div></div><div class=\"col-md-6 pl-md-1\"><div class=\"form-group\"><label>Food Price</label><input type=\"number\" class=\"form-control\" name=\"fprice\" placeholder=". $row["Fprice"] .">";
+                          echo "<label>Food Name</label><input type=\"text\" class=\"form-control\" name=\"fname\" placeholder=". $row["Fname"] ."></div></div><div class=\"col-md-6 pl-md-1\"><div class=\"form-group\"><label>Food Price</label><input type=\"number\" class=\"form-control\" name=\"fprice\" placeholder=". $row["Fprice"] .">";
                         }
                         else{
                           echo "0 result";

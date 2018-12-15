@@ -196,7 +196,7 @@
 
                       if (!empty($_POST))
                       {
-                        $sql = "SELECT FID, Fname, Fprice from FOOD WHERE Fname = '$_POST[fname]'";
+                        $sql = "SELECT FID, Fname, Fprice from FOOD WHERE Fname LIKE '%$_POST[fname]%'";
                       }else{
                         $sql = "SELECT FID, Fname, Fprice from FOOD";
                       }

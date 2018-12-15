@@ -29,139 +29,80 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="./food.php">
+            <a href="../../index.php">
               <i class="tim-icons icon-bag-16"></i>
-              <p>Food</p>
-            </a>
-          </li>
-          <li>
-            <a href="./customer.php">
-              <i class="tim-icons icon-bullet-list-67"></i>
-              <p>Customers</p>
-            </a>
-          </li>
-          <li >
-            <a href="./order.php">
-              <i class="tim-icons icon-calendar-60"></i>
-              <p>Orders</p>
-            </a>
-          </li>
-          <li >
-            <a href="./delivery.php">
-              <i class="tim-icons icon-bus-front-12"></i>
-              <p><p>Delivery groups</p></p>
-            </a>
-          </li>
-        </ul>
-        <div class="logo">
-        </div>
-        <ul class="nav">
-          <li class="active ">
-            <a href="./newFood.php">
-              <i class="tim-icons icon-bag-16"></i>
-              <p>Add new food</p>
-            </a>
-          </li>
-          <li>
-            <a href="./newDelivery.php">
-              <i class="tim-icons icon-bus-front-12"></i>
-              <p>Add new Delivery group</p>
+              <p>Go Back </p>
             </a>
           </li>
         </ul>
       </div>
     </div>
     <div class="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle d-inline">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="javascript:void(0)">Table List</a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navigation">
-            <ul class="navbar-nav ml-auto">
-              <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                  <div class="photo">
-                    <img src="../assets/img/anime3.png">
-                  </div>
-                  <b class="caret d-none d-lg-block d-xl-block"></b>
-                  <p class="d-lg-none">
-                    Log out
-                  </p>
-                </a>
-                <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link">
-                    <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="separator d-lg-none"></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <i class="tim-icons icon-simple-remove"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Navbar -->
+
+
       <div class="content">
         <div class="row">
-          <div class="col-md-8">
-            <div class="card">
+          <div class="col-md-12">
+            <div class="card ">
               <div class="card-header">
-                <h5 class="title">New Food</h5>
+                <h4 class="card-title"> Order List</h4>
               </div>
-              <form action="./insertf.php" method="POST">
               <div class="card-body">
-                  <div class="row">
-                    <div class="col-md-6 pr-md-1">
-                      <div class="form-group">
-                        <label>Food Name</label>
-                        <input type="text" class="form-control" name="fname" placeholder="Food Name">
-                      </div>
-                    </div>
-                    <div class="col-md-6 pl-md-1">
-                      <div class="form-group">
-                        <label>Food Price</label>
-                        <input type="number" class="form-control" name="fprice">
-                      </div>
-                    </div>
-                  </div>
+                <div class="table-responsive">
+                  <table class="table tablesorter " id="">
+                    <thead class=" text-primary">
+                      <tr>
+                        <th>
+                          Order ID
+                        </th>
+                        <th>
+                          Address
+                        </th>
+                        <th>
+                          Time
+                        </th>
+                        <th>
+                          Delivery Group
+                        </th>
+                        <th>
+                          Customer ID
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <?php
+                      $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+                      if($conn->connect_error){
+                        die("connection falied:". $conn-> connect_error);
+                      }
 
+						$sql = "USE dpan6_3;";
+						if ($conn->query($sql) === TRUE) {
+
+						} else {
+						   echo "Error using  database: " . $conn->error;
+						}
+                      $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = 1";
+                      $result = $conn->query($sql);
+
+                      if($result -> num_rows > 0){
+                        while ($row = $result -> fetch_assoc()){
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
+                        }
+                      }
+                      else{
+                        echo "0 result";
+                      }
+
+                      $conn -> close();
+                      ?>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              <div class="card-footer">
-                <input type="submit" class="btn btn-fill btn-primary"/>
-              </div>
-            </form>
-            </div>
-          </div>
             </div>
           </div>
         </div>
-      </div>
-
       </div>
     </div>
   </div>
@@ -182,7 +123,7 @@
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <script>
+ <!--  <script>
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -292,7 +233,7 @@
         });
       });
     });
-  </script>
+  </script> -->
 </body>
 
 </html>

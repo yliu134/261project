@@ -1,6 +1,9 @@
 <?php
 /* [INIT] */
 session_start();
+if (!$_SESSION['sessData'] || !$_SESSION['sessData']['userLoggedIn']){
+    header("Location:User/login-reg.php");
+}
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
 require PATH_LIB . "lib-db.php";
 require PATH_LIB . "lib-cart.php";

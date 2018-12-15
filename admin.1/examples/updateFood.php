@@ -185,9 +185,6 @@
                     $Fname = $row->Fname;
                     $Fprice =$row->Fprice;
                   }
-                  echo $FID;
-                  echo $Fname;
-                  echo $Fprice;
                 }
                 else{
                   echo "0 result";

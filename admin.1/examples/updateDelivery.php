@@ -215,7 +215,7 @@
               </div>
             <div class="card-body">
                 <div class="row">
-                  <div class="col-md-6 pl-md-1">
+                  <div class="col-md-6 pr-md-1">
                     <div class="form-group">
                       <label>Delivery Group Name</label>
                       <input type="text" class="form-control" name="lname" value="<?php echo $Lname; ?>">

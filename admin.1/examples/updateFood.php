@@ -75,13 +75,13 @@
           <li class="active ">
             <a href="./updateFood.php">
               <i class="tim-icons icon-bag-16"></i>
-              <p>Update food</p>
+              <p>Update/Delete food</p>
             </a>
           </li>
           <li>
             <a href="./updateDelivery.php">
               <i class="tim-icons icon-bus-front-12"></i>
-              <p>Update Delivery group</p>
+              <p>Update/Delete Delivery group</p>
             </a>
           </li>
         </ul>

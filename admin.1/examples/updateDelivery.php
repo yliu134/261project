@@ -148,15 +148,15 @@
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">Search by food ID</h5>
+                <h5 class="title">Search by Delivery Group ID</h5>
               </div>
-              <form action="./updateFood.php" method="POST">
+              <form action="./updateDelivery.php" method="POST">
               <div class="card-body">
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                         <label>ID</label>
-                        <input type="Number" class="form-control" name="fid" placeholder="ID">
+                        <input type="Number" class="form-control" name="lid" placeholder="ID">
                       </div>
                     </div>
                   </div>
@@ -178,7 +178,7 @@
             <div class="card-header">
               <h5 class="title">Update Form</h5>
             </div>
-            <form action="./updatef.php" method="POST">
+            <form action="./updated.php" method="POST">
               <?php
               $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
               if($conn->connect_error){
@@ -193,13 +193,12 @@
     }
               if (!empty($_POST))
               {
-                $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
+                $sql = "SELECT LocID, Lname from DELIVERY_GROUP WHERE LocID = $_POST[lid]";
                 $result = $conn->query($sql);
                 if($result -> num_rows >0){
                   while ($row = $result->fetch_object()) {
-                    $FID = $row->FID;
-                    $Fname = $row->Fname;
-                    $Fprice =$row->Fprice;
+                    $LocID = $row->LocID;
+                    $Lname = $row->Lname;
                   }
                 }
                 else{
@@ -218,18 +217,12 @@
                 <div class="row">
                   <div class="col-md-6 pr-md-1">
                     <div class="form-group">
-                      <label>Food Name</label>
-                    <input type="text" class="form-control" name="fname" value="<?php echo $Fname; ?>">
-                    </div>
-                  </div>
-                  <div class="col-md-6 pl-md-1">
-                    <div class="form-group">
-                      <label>Food Price</label>
-                      <input type="text" class="form-control" name="fprice" value="<?php echo $Fprice; ?>">
+                      <label>Delivery Group Name</label>
+                      <input type="text" class="form-control" name="lname" value="<?php echo $Lname; ?>">
                     </div>
                   </div>
                 </div>
-                <input type="hidden" name="fid" value="<?php echo $FID; ?>">
+                <input type="hidden" name="lid" value="<?php echo $LocID; ?>">
             </div>
             <div class="card-footer">
               <input type="submit" class="btn btn-fill btn-primary"/>

@@ -181,18 +181,18 @@
                 $result = $conn->query($sql);
                 if($result -> num_rows >0){
                   $row = mysql_fetch_array($result);
-                  $FID = $row['FID'];
-                  $Fname = $row['Fname'];
-                  $Fprice = $row['Fprice'];
+                  $FID = 'ss';
+                  $Fname = 'ssss';
+                  $Fprice = 'ccc';
                   echo $FID;
                   echo $Fname;
                   echo $Fprice;
                 }
                 else{
-                  echo "      0 result";
+                  echo "0 result";
                 }
               }else{
-                echo "   no such food exists";
+                echo "no such food exists";
               }
 
               $conn -> close();

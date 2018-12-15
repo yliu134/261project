@@ -28,7 +28,7 @@
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li>
+          <li class="active ">
             <a href="./food.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Food</p>
@@ -56,7 +56,7 @@
         <div class="logo">
         </div>
         <ul class="nav">
-          <li class="active ">
+          <li>
             <a href="./newFood.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Add new food</p>
@@ -66,22 +66,6 @@
             <a href="./newDelivery.php">
               <i class="tim-icons icon-bus-front-12"></i>
               <p>Add new Delivery group</p>
-            </a>
-          </li>
-        </ul>
-        <div class="logo">
-        </div>
-        <ul class="nav">
-          <li>
-            <a href="./updateFood.php">
-              <i class="tim-icons icon-bag-16"></i>
-              <p>Update food</p>
-            </a>
-          </li>
-          <li>
-            <a href="./updateDelivery.php">
-              <i class="tim-icons icon-bus-front-12"></i>
-              <p>Update Delivery group</p>
             </a>
           </li>
         </ul>
@@ -142,26 +126,21 @@
         </div>
       </div>
       <!-- End Navbar -->
+      <!-- Select -->
       <div class="content">
         <div class="row">
           <div class="col-md-8">
             <div class="card">
               <div class="card-header">
-                <h5 class="title">New Food</h5>
+                <h5 class="title">Search by food ID</h5>
               </div>
-              <form action="./insertf.php" method="POST">
+              <form action="./updateFood.php" method="POST">
               <div class="card-body">
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                        <label>Food Name</label>
-                        <input type="text" class="form-control" name="fname" placeholder="Food Name">
-                      </div>
-                    </div>
-                    <div class="col-md-6 pl-md-1">
-                      <div class="form-group">
-                        <label>Food Price</label>
-                        <input type="number" class="form-control" name="fprice">
+                        <label>ID</label>
+                        <input type="Number" class="form-control" name="fid" placeholder="ID">
                       </div>
                     </div>
                   </div>
@@ -174,10 +153,76 @@
             </div>
           </div>
             </div>
+
+      <!-- End Select -->
+      <!-- Update Form -->
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header">
+              <h5 class="title">Update Form</h5>
+            </div>
+            <form action="./updatef.php" method="POST">
+              <?php
+              $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+              if($conn->connect_error){
+                die("connection falied:". $conn-> connect_error);
+              }
+
+    $sql = "USE dpan6_3;";
+    if ($conn->query($sql) === TRUE) {
+
+    } else {
+       echo "Error using  database: " . $conn->error;
+    }
+              if (!empty($_POST))
+              {
+                $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
+                $result = $conn->query($sql);
+                if($result -> num_rows >0){
+                  while ($row = $result->fetch_object()) {
+                    $FID = $row->FID;
+                    $Fname = $row->Fname;
+                    $Fprice =$row->Fprice;
+                  }
+                }
+                else{
+                  echo "0 result";
+                }
+              }else{
+                echo "no such food exists";
+              }
+
+              $conn -> close();
+              ?>
+              <div class="card-header">
+                <h7 class="title"><?php echo $FID; ?></h7>
+              </div>
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 pr-md-1">
+                    <div class="form-group">
+                      <label>Food Name</label>
+                    <input type="text" class="form-control" name="fname" value="<?php echo $Fname; ?>">
+                    </div>
+                  </div>
+                  <div class="col-md-6 pl-md-1">
+                    <div class="form-group">
+                      <label>Food Price</label>
+                      <input type="text" class="form-control" name="fprice" value="<?php echo $Fprice; ?>">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="fid" value="<?php echo $FID; ?>">
+            </div>
+            <div class="card-footer">
+              <input type="submit" class="btn btn-fill btn-primary"/>
+            </div>
+          </form>
           </div>
         </div>
-      </div>
-
+          </div>
+          <!-- End Update Form -->
       </div>
     </div>
   </div>

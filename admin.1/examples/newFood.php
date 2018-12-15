@@ -133,7 +133,7 @@
               <div class="card-header">
                 <h5 class="title">New Food</h5>
               </div>
-              <form action="insertFood.php" method="post">
+              <form action="insertf.php" method="post">
               <div class="card-body">
 
                   <div class="row">

@@ -18,7 +18,7 @@
   echo "Error using  database: " . $conn->error;
   }
 
-$sql="INSERT INTO FOOD (Fname, Fprice) VALUES ('ccc','11')";
+$sql="INSERT INTO FOOD (Fname, Fprice) VALUES ('$_POST[fname]',$_POST[fprice])";
 
 
 

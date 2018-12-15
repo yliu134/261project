@@ -46,7 +46,7 @@ if(!empty($sessData['status']['msg'])){
     </div>
 
     <div class="regisFrm">
-        <form action="userAccount.php" method="post">
+        <form action="../admin.1/food.php" method="post">
             <input type="password" name="Password" placeholder="ADMIN PASSWORD" required="">
             <div class="send-button">
                 <input type="submit" name="AdminSubmit" value="ADMIN_LOGIN">

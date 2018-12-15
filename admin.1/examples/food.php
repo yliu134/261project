@@ -196,11 +196,21 @@
                     </thead>
                     <tbody>
                       <?php
+                      session_start();
+                      if(isset($_POST['AdminSubmit'])){
+                        if(md5($_POST['AdminSubmit']) == md5('admin')){
+                          $_SESSION['loggedin'] = true;
+                        }
+                      }
 
-
+                      if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                          echo "Welcome, administrator";
+                      } else {
+                          header("Location:../../User/login-reg.php");
+                      }
                       $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
                       if($conn->connect_error){
-                        die("connection falied:". $conn-> connect_error);
+                        die("connection failed:". $conn-> connect_error);
                       }
 
 						$sql = "USE dpan6_3;";

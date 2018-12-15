@@ -17,7 +17,7 @@
   echo "Error using database: " . $conn->error;
   }
 
-$sql2="INSERT INTO DELIVERY_GROUP (Lname) VALUES ('$_POST[lname]')";
+$sql2="INSERT INTO FOOD (Fname, Fprice) VALUES ('$_POST[fname]',$_POST[fprice])";
 
 
 
@@ -29,7 +29,7 @@ if ($conn->query($sql2) === FALSE)
 
   }
 
-echo "1 delivery group added";
+echo "1 food added";
 
 
 

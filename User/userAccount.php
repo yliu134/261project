@@ -13,7 +13,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
         }else{
 
             $userData = array(
-                'Password' => $_POST['Password'],
+                'Password' => md5($_POST['Password']),
                 'Username' => $_POST['Username'],
                 'Pnum' => $_POST['Pnum']
             );
@@ -51,9 +51,9 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
         $userData = $user->getRows($conditions);
     var_dump($userData);
     if($userData){
-            //$sessData['userLoggedIn'] = TRUE;
-            //$sessData['CID'] = $userData['CID'];
-            $sessData['status']['type'] = 'error';
+            $sessData['userLoggedIn'] = TRUE;
+            $sessData['CID'] = $userData['CID'];
+            $sessData['status']['type'] = 'success';
             $sessData['status']['msg'] = $userData;
         }else{
             $sessData['status']['type'] = 'error';
@@ -66,7 +66,9 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     //store login status into the session
     $_SESSION['sessData'] = $sessData;
     //redirect to the home page
-    header("Location:login-reg.php");
+    $redirectURL = ($sessData['status']['type'] == 'success')?'../index.php':'login-reg.php';
+    //redirect to the home/registration page
+    header("Location:".$redirectURL);
 }elseif(!empty($_REQUEST['logoutSubmit'])){
     //remove session data
     unset($_SESSION['sessData']);

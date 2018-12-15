@@ -1,6 +1,8 @@
 <?php
 /* [INIT] */
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 function console_log( $data ){
   echo '<script>';
@@ -36,10 +38,10 @@ switch ($_POST['req']) {
   case "add":
     // ITEMS WILL BE STORED IN THE ORDER OF
     // $_SESSION['cart'][PRODUCT ID] = QUANTITY
-    if (is_numeric($_SESSION['cart'][$_POST['product_id']])) {
-      $_SESSION['cart'][$_POST['product_id']] ++;
+    if (is_numeric($_SESSION['cart'][$_POST['FID']])) {
+      $_SESSION['cart'][$_POST['FID']] ++;
     } else {
-      $_SESSION['cart'][$_POST['product_id']] = 1;
+      $_SESSION['cart'][$_POST['FID']] = 1;
     }
     echo "Item added to cart";
     break;
@@ -81,8 +83,8 @@ switch ($_POST['req']) {
     </table>
     <?php if ($total > 0) { ?>
       <form id="cart-checkout" onsubmit="return cart.checkout();">
-        Name: <input type="text" id="co_name" required/>
-        Email: <input type="email" id="co_email" required/>
+   <!--      Name: <input type="text" id="co_name" required/>
+        Email: <input type="email" id="co_email" required/> -->
         <input type="submit" value="Checkout"/>
       </form>
     <?php
@@ -92,9 +94,9 @@ switch ($_POST['req']) {
   // CHANGE QTY
   case "change":
     if ($_POST['qty'] == 0) {
-      unset($_SESSION['cart'][$_POST['product_id']]);
+      unset($_SESSION['cart'][$_POST['FID']]);
     } else {
-      $_SESSION['cart'][$_POST['product_id']] = $_POST['qty'];
+      $_SESSION['cart'][$_POST['FID']] = $_POST['qty'];
     }
     echo "Quantity updated";
     break;
@@ -102,8 +104,19 @@ switch ($_POST['req']) {
   // CHECKOUT
   // THERE ARE NO ERROR & SECURITY CHECKS IN THIS SIMPLE EXAMPLE
   // BEEF UP THIS SECTION ON YOUR OWN!
-  case "checkout":
-    if ($cartLib->oAdd($_POST['name'], $_POST['email'])) {
+  // case "checkout":
+  //   if ($cartLib->oAdd($_POST['name'], $_POST['email'])) {
+  //     $_SESSION['cart'] = array();
+  //     echo "OK";
+  //   } else {
+  //     echo $cartLib->error;
+  //   }
+  //   break;
+
+     case "checkout":      
+     echo "notOK";
+
+    if ($cartLib->oAdd("123", "123","123")) {//use dummy need to input `Addr`,`CID`,`LocID` 
       $_SESSION['cart'] = array();
       echo "OK";
     } else {

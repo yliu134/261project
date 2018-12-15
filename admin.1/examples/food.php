@@ -131,7 +131,7 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title"> Food List</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -160,7 +160,7 @@
 
 						$sql = "USE dpan6_3;";
 						if ($conn->query($sql) === TRUE) {
-						   
+
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}

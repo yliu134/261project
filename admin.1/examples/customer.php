@@ -131,7 +131,7 @@
           <div class="col-md-12">
             <div class="card ">
               <div class="card-header">
-                <h4 class="card-title"> Simple Table</h4>
+                <h4 class="card-title"> Customers</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -139,118 +139,45 @@
                     <thead class=" text-primary">
                       <tr>
                         <th>
-                          Name
+                          ID
                         </th>
                         <th>
-                          Country
+                          Username
                         </th>
                         <th>
-                          City
-                        </th>
-                        <th class="text-center">
-                          Salary
+                          Phone number
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>
-                          Dakota Rice
-                        </td>
-                        <td>
-                          Niger
-                        </td>
-                        <td>
-                          Oud-Turnhout
-                        </td>
-                        <td class="text-center">
-                          $36,738
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Minerva Hooper
-                        </td>
-                        <td>
-                          Curaçao
-                        </td>
-                        <td>
-                          Sinaai-Waas
-                        </td>
-                        <td class="text-center">
-                          $23,789
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Sage Rodriguez
-                        </td>
-                        <td>
-                          Netherlands
-                        </td>
-                        <td>
-                          Baileux
-                        </td>
-                        <td class="text-center">
-                          $56,142
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Philip Chaney
-                        </td>
-                        <td>
-                          Korea, South
-                        </td>
-                        <td>
-                          Overland Park
-                        </td>
-                        <td class="text-center">
-                          $38,735
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Doris Greene
-                        </td>
-                        <td>
-                          Malawi
-                        </td>
-                        <td>
-                          Feldkirchen in Kärnten
-                        </td>
-                        <td class="text-center">
-                          $63,542
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Mason Porter
-                        </td>
-                        <td>
-                          Chile
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $78,615
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          Jon Porter
-                        </td>
-                        <td>
-                          Portugal
-                        </td>
-                        <td>
-                          Gloucester
-                        </td>
-                        <td class="text-center">
-                          $98,615
-                        </td>
-                      </tr>
+                      <?php
+
+
+                      $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+                      if($conn->connect_error){
+                        die("connection falied:". $conn-> connect_error);
+                      }
+
+						$sql = "USE dpan6_3;";
+						if ($conn->query($sql) === TRUE) {
+
+						} else {
+						   echo "Error using  database: " . $conn->error;
+						}
+                      $sql = "SELECT CID, Username, Pnum from CUSTOMER";
+                      $result = $conn->query($sql);
+
+                      if($result -> num_rows > 0){
+                        while ($row = $result -> fetch_assoc()){
+                          echo "<tr><td>". $row["CID"] ."</td><td>". $row["Username"] ."</td><td>". $row["Pnum"] ."</td></tr>";
+                        }
+                      }
+                      else{
+                        echo "0 result";
+                      }
+
+                      $conn -> close();
+                      ?>
                     </tbody>
                   </table>
                 </div>

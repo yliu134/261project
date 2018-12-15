@@ -145,9 +145,6 @@
                           Address
                         </th>
                         <th>
-                          Date
-                        </th>
-                        <th>
                           Time
                         </th>
                         <th>
@@ -171,12 +168,12 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
-                      $sql = "SELECT Onum, Addr, Date, Time, LocID, CID from ORDERS";
+                      $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS";
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Date"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
                         }
                       }
                       else{

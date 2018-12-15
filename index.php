@@ -40,6 +40,12 @@ $products = $cartLib->pGet();
               <p>My Orders</p>
             </a>
           </li>
+ <h1>
+          hello 
+ <script type="text/javascript">
+          document.write($_SESSION['sessData']['CID'])
+
+           </script></h1>
     </header>
 
     <!-- [PRODUCTS] -->	

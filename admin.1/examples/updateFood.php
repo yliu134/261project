@@ -184,6 +184,9 @@
                   $FID = $row["FID"];
                   $Fname = $row["Fname"];
                   $Fprice = $row["Fprice"];
+                  echo $FID;
+                  echo $Fname;
+                  echo $Fprice;
                 }
                 else{
                   echo "0 result";
@@ -201,6 +204,7 @@
                 <div class="row">
                   <div class="col-md-6 pr-md-1">
                     <div class="form-group">
+                      <label>Food Name</label>
                     <input type="text" class="form-control" name="fname" value='<?php echo $Fname; ?>'>
                     </div>
                   </div>

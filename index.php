@@ -1,8 +1,12 @@
 <?php
 /* [INIT] */
 session_start();
-if (!$_SESSION['sessData'] || !$_SESSION['sessData']['userLoggedIn']){
-    header("Location:User/login-reg.php");
+$sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:'';
+if(!empty($sessData['userLoggedIn']) && !empty($sessData['CID'])){
+
+}else{
+  var_dump($sessData);
+    //header("Location:User/login-reg.php");
 }
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
 require PATH_LIB . "lib-db.php";

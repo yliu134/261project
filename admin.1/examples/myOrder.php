@@ -123,7 +123,7 @@
   <script src="../assets/js/black-dashboard.min.js?v=1.0.0"></script>
   <!-- Black Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-  <script>
+ <!--  <script>
     $(document).ready(function() {
       $().ready(function() {
         $sidebar = $('.sidebar');
@@ -233,7 +233,7 @@
         });
       });
     });
-  </script>
+  </script> -->
 </body>
 
 </html>

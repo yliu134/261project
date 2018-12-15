@@ -203,10 +203,10 @@
                   }
                 }
                 else{
-                  echo "0 result";
+                  echo "\x20\x20\x200 result";
                 }
               }else{
-                echo "no such food exists";
+                echo "\x20\x20\x20no such food exists";
               }
 
               $conn -> close();

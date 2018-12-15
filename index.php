@@ -13,7 +13,7 @@ require PATH_LIB . "lib-db.php";
 require PATH_LIB . "lib-cart.php";
 $cartLib = new Cart();
 $products = $cartLib->pGet();
-
+session_write_close();
 /* [DRAW HTML] */
 ?>
 <!DOCTYPE html>

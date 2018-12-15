@@ -18,11 +18,11 @@
   echo "Error using  database: " . $conn->error;
   }
 
-$sql="INSERT INTO FOOD (Fname, Fprice) VALUES ('ssssss',111)";
+$sql2="INSERT INTO FOOD (Fname, Fprice) VALUES ('ssssss',111)";
 
 
 
-if (!mysql_query($sql,$conn))
+if ($conn->query($sql2) === FALSE)
 
   {
 

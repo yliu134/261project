@@ -133,21 +133,23 @@
               <div class="card-header">
                 <h5 class="title">New Delivery Group</h5>
               </div>
+              <form action="./insertd.php" method="POST">
               <div class="card-body">
-                <form>
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                         <label>Location Name</label>
-                        <input type="text" class="form-control" placeholder="Location Name">
+                        <input type="text" class="form-control" name="lname" placeholder="Location Name">
                       </div>
                     </div>
+
                   </div>
-                </form>
+
               </div>
               <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Submit</button>
+                <input type="submit" class="btn btn-fill btn-primary"/>
               </div>
+            </form>
             </div>
           </div>
             </div>

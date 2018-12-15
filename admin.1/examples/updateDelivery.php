@@ -207,7 +207,7 @@
                 }
               }else{
                 echo str_repeat("&nbsp;", 10);
-                echo "no such food exists";
+                echo "no such delivery group exists";
               }
 
               $conn -> close();

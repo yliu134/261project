@@ -18,7 +18,7 @@
   echo "Error using database: " . $conn->error;
   }
 
-$sql2="INSERT INTO FOOD (Fname, Fprice) VALUES ('huh',111)";
+$sql2="INSERT INTO FOOD (Fname, Fprice) VALUES (mysql_real_escape_string($_POST('fname')),111)";
 
 
 

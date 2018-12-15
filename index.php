@@ -40,26 +40,34 @@ $products = $cartLib->pGet();
               <p>My Orders</p>
             </a>
           </li>
+ <h1>
+          hello 
+          <?php $_SESSION['sessData']['CID'] ?>
+</h1>
 
-           <li>
-            <a href="./thank-you.php">
+  <li>
+            <a href="thank-you.php">
               <i class="tim-icons icon-bus-front-12"></i>
-              <p>Log out</p>
+              <p>exit </p>
             </a>
           </li>
 
- <h1>
-          hello 
 
-          <?php echo $_SESSION['sessData']['CID'] ?>
- M <div class="pdt">
+    </header>
+
+    <!-- [PRODUCTS] -->	
+    <div id="products"><?php
+      if (is_array($products)) {
+        foreach ($products as $id => $row) {
+          ?>
+          <div class="pdt">
             <img src="images/<?= $row['product_image'] ?>"/>
             <h3 class="pdtName"><?= $row['Fname'] ?></h3>
             <div class="pdtPrice">$<?= $row['Fprice'] ?></div>
             <div class="pdtDesc"><?= $row['product_description'] ?></div>
             <input class="pdtAdd" type="button" value="Add to cart" onclick="cart.add(<?= $row['FID'] ?>);"/>
          
-         m </div>
+          </div>
         <?php
         }
       } else {

@@ -51,8 +51,8 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
         $userData = $user->getRows($conditions);
     var_dump($userData);
     if($userData){
-            $sessData['userLoggedIn'] = TRUE;
-            $sessData['CID'] = $userData['CID'];
+            //$sessData['userLoggedIn'] = TRUE;
+            //$sessData['CID'] = $userData['CID'];
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = $userData;
         }else{

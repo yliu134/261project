@@ -36,9 +36,9 @@ if ($conn->query($sql2) === FALSE)
 
 
 if (isset($_POST['delete'])) {
-      $message = '<div class="alert alert-success" role="alert">1 deliery group deleted</div>';
+      $message = '<div class="alert alert-success" role="alert">1 deliery group deleted..</div>';
   } else {
-      $message = '<div class="alert alert-success" role="alert">1 deliery group updated</div>';
+      $message = '<div class="alert alert-success" role="alert">1 deliery group updated..</div>';
   }
 
 

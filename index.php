@@ -6,7 +6,7 @@ if(!empty($sessData['userLoggedIn']) && !empty($sessData['CID'])){
 
 }else{
   var_dump($sessData);
-    //header("Location:User/login-reg.php");
+    header("Location:User/login-reg.php");
 }
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
 require PATH_LIB . "lib-db.php";

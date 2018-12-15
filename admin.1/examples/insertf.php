@@ -5,7 +5,7 @@
 
   <?php
 
-
+  echo "!!!!!!!!!!!!!!!!!";
   $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
   if($conn->connect_error){
     die("connection falied:". $conn-> connect_error);

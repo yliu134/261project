@@ -87,12 +87,6 @@ class User{
             $columns = '';
             $values  = '';
             $i = 0;
-            if(!array_key_exists('created',$data)){
-                $data['created'] = date("Y-m-d H:i:s");
-            }
-            if(!array_key_exists('modified',$data)){
-                $data['modified'] = date("Y-m-d H:i:s");
-            }
             foreach($data as $key=>$val){
                 $pre = ($i > 0)?', ':'';
                 $columns .= $pre.$key;
@@ -101,7 +95,7 @@ class User{
             }
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
             $insert = $this->db->query($query);
-            return $insert?$this->db->insert_id:false;
+            return $insert;
         }else{
             return false;
         }

@@ -126,7 +126,35 @@
         </div>
       </div>
       <!-- End Navbar -->
+      <!-- Select -->
       <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">Search by Customer ID</h5>
+              </div>
+              <form action="./customer.php" method="POST">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                      <div class="form-group">
+                        <label>ID</label>
+                        <input type="number" class="form-control" name="cid" placeholder="ID">
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="card-footer">
+                <input type="submit" class="btn btn-fill btn-primary"/>
+              </div>
+            </form>
+            </div>
+          </div>
+            </div>
+
+      <!-- End Select -->
         <div class="row">
           <div class="col-md-12">
             <div class="card ">
@@ -164,7 +192,15 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
-                      $sql = "SELECT CID, Username, Pnum from CUSTOMER";
+
+                if (!empty($_POST))
+                {
+                  $sql = "SELECT CID, Username, Pnum from CUSTOMER WHERE CID = $_POST[cid]";
+                }else{
+                  $sql = "SELECT CID, Username, Pnum from CUSTOMER";
+                }
+
+
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){

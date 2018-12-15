@@ -133,27 +133,28 @@
               <div class="card-header">
                 <h5 class="title">New Food</h5>
               </div>
+              <form action="./insertf.php" method="POST">
               <div class="card-body">
-                <form>
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                         <label>Food Name</label>
-                        <input type="text" class="form-control" placeholder="Food Name">
+                        <input type="text" class="form-control" name="fname" placeholder="Food Name">
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                         <label>Food Price</label>
-                        <input type="text" class="form-control" placeholder="Food Price">
+                        <input type="number" class="form-control" name="fprice" placeholder="Food Price">
                       </div>
                     </div>
                   </div>
-                </form>
+
               </div>
               <div class="card-footer">
-                <button type="submit" class="btn btn-fill btn-primary">Submit</button>
+                <input type="submit" class="btn btn-fill btn-primary"/>
               </div>
+            </form>
             </div>
           </div>
             </div>

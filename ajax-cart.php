@@ -113,7 +113,9 @@ switch ($_POST['req']) {
   //   }
   //   break;
 
-     case "checkout":
+     case "checkout":      
+     echo "notOK";
+
     if ($cartLib->oAdd("123", "123","123")) {//use dummy need to input `Addr`,`CID`,`LocID` 
       $_SESSION['cart'] = array();
       echo "OK";

@@ -44,6 +44,16 @@ if(!empty($sessData['status']['msg'])){
         </form>
         <p>New User?<a href="registration.php">Register</a></p>
     </div>
+
+    <div class="regisFrm">
+        <form action="userAccount.php" method="post">
+            <input type="password" name="Password" placeholder="ADMIN PASSWORD" required="">
+            <div class="send-button">
+                <input type="submit" name="AdminSubmit" value="ADMIN_LOGIN">
+            </div>
+        </form>
+        <p>Admin Log in?<a href="registration.php">Admin</a></p>
+    </div>
     <?php } ?>
 </div>
 

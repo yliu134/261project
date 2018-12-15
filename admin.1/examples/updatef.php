@@ -17,7 +17,7 @@
   echo "Error using database: " . $conn->error;
   }
 
-$sql2="INSERT INTO FOOD (Fname, Fprice) VALUES ('$_POST[fname]',$_POST[fprice])";
+$sql2="UPDATE FOOD SET Fname = '$_POST[fname]', Fprice= '$_POST[fprice]' WHERE CustomerID = $_POST[fid];";
 
 
 
@@ -29,7 +29,7 @@ if ($conn->query($sql2) === FALSE)
 
   }
 
-echo "1 food added";
+echo "1 food updated";
 
 
 

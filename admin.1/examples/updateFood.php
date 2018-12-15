@@ -213,7 +213,7 @@
                     </div>
                   </div>
                 </div>
-
+                <input type="hidden" name="fid" value="<?php echo $FID; ?>">
             </div>
             <div class="card-footer">
               <input type="submit" class="btn btn-fill btn-primary"/>

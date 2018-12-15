@@ -48,11 +48,11 @@ class Cart extends DB {
 
     // Insert the items
     if ($pass) {
-      $sql = "INSERT INTO `ITEM` (`Onum`, `FID`, `Quantity`) VALUES ";
+      $sql = "INSERT INTO `ITEM` (`FID`, `Quantity`) VALUES ";
       $cond = [];
       foreach ($_SESSION['cart'] as $id=>$qty) {
-        $sql .= "(?, ?, ?),";
-        array_push($cond, $this->lastID, $id, $qty);
+        $sql .= "( ?, ?),";
+        array_push($cond, $this-> $id, $qty);
       }
       $sql = substr($sql, 0, -1) . ";"; // strip last comma
       $pass = $this->exec($sql, $cond);

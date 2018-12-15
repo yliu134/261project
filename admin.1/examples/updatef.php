@@ -17,7 +17,14 @@
   echo "Error using database: " . $conn->error;
   }
 
-$sql2="UPDATE FOOD SET Fname = '$_POST[fname]', Fprice= '$_POST[fprice]' WHERE FID = $_POST[fid];";
+  if (isset($_POST['delete'])) {
+        $sql2="DELETE FROM FOOD WHERE FID = $_POST[fid];";
+    } else {
+        $sql2="UPDATE FOOD SET Fname = '$_POST[fname]', Fprice= '$_POST[fprice]' WHERE FID = $_POST[fid];";
+    }
+
+
+
 
 
 
@@ -29,7 +36,11 @@ if ($conn->query($sql2) === FALSE)
 
   }
 
-echo "1 food updated";
+  if (isset($_POST['delete'])) {
+        echo "1 food deleted";
+    } else {
+        echo "1 food updated";
+    }
 
 
 

@@ -83,8 +83,7 @@ switch ($_POST['req']) {
     </table>
     <?php if ($total > 0) { ?>
       <form id="cart-checkout" onsubmit="return cart.checkout();">
-   <!--      Name: <input type="text" id="co_name" required/>
-        Email: <input type="email" id="co_email" required/> -->
+        Address: <input type="text" id="Addr" required/>
         <input type="submit" value="Checkout"/>
       </form>
     <?php
@@ -113,10 +112,8 @@ switch ($_POST['req']) {
   //   }
   //   break;
 
-     case "checkout":      
-     echo "notOK";
-
-    if ($cartLib->oAdd("123", "123","123")) {//use dummy need to input `Addr`,`CID`,`LocID` 
+  case "checkout":      
+    if ($cartLib->oAdd($_POST['CID'], $_POST['Addr'])) {
       $_SESSION['cart'] = array();
       echo "OK";
     } else {

@@ -39,6 +39,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     $redirectURL = ($sessData['status']['type'] == 'success')?'login-reg.php':'registration.php';
     //redirect to the home/registration page
     header("Location:".$redirectURL);
+    session_write_close();
 }elseif(isset($_POST['loginSubmit'])){
     if(!empty($_POST['CID']) && !empty($_POST['Password'])){
     echo "1";   
@@ -70,6 +71,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     $redirectURL = ($sessData['status']['type'] == 'success')?'../index.php':'login-reg.php';
     //redirect to the home/registration page
     header("Location:".$redirectURL);
+    session_write_close();
 }elseif(!empty($_REQUEST['logoutSubmit'])){
     //remove session data
     unset($_SESSION['sessData']);
@@ -80,7 +82,9 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     $_SESSION['sessData'] = $sessData;
     //redirect to the home page
     header("Location:login-reg.php");
+    session_write_close();
 }else{
     //redirect to the home page
     header("Location:login-reg.php");
+    session_write_close();
 }

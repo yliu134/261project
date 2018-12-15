@@ -13,7 +13,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
         }else{
 
             $userData = array(
-                'Password' => $_POST['Password'],
+                'Password' => md5($_POST['Password']),
                 'Username' => $_POST['Username'],
                 'Pnum' => $_POST['Pnum']
             );

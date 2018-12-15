@@ -82,7 +82,7 @@
 						} else {
 						   echo "Error using  database: " . $conn->error;
 						}
-                      $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = '$sessData['CID']' ";
+                      $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = 1";
                       sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = 1";
                       $result = $conn->query($sql);
 

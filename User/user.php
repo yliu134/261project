@@ -74,7 +74,7 @@ class User{
                 }
             }
         }
-        return !empty($data)?$data:$sql;
+        return !empty($data)?$data:false;
     }
 
     /*

@@ -33,6 +33,13 @@ $products = $cartLib->pGet();
       <div id="page-cart" onclick="cart.toggle();">
         &#128722; <span id="page-cart-count">0</span>
       </div>
+
+         <li>
+            <a href="./admin.1/examples/myOrder.php">
+              <i class="tim-icons icon-bus-front-12"></i>
+              <p>My Orders</p>
+            </a>
+          </li>
     </header>
 
     <!-- [PRODUCTS] -->	
@@ -46,6 +53,7 @@ $products = $cartLib->pGet();
             <div class="pdtPrice">$<?= $row['Fprice'] ?></div>
             <div class="pdtDesc"><?= $row['product_description'] ?></div>
             <input class="pdtAdd" type="button" value="Add to cart" onclick="cart.add(<?= $row['FID'] ?>);"/>
+         
           </div>
         <?php
         }

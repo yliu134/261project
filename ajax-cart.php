@@ -81,8 +81,8 @@ switch ($_POST['req']) {
     </table>
     <?php if ($total > 0) { ?>
       <form id="cart-checkout" onsubmit="return cart.checkout();">
-        Name: <input type="text" id="co_name" required/>
-        Email: <input type="email" id="co_email" required/>
+   <!--      Name: <input type="text" id="co_name" required/>
+        Email: <input type="email" id="co_email" required/> -->
         <input type="submit" value="Checkout"/>
       </form>
     <?php
@@ -102,8 +102,17 @@ switch ($_POST['req']) {
   // CHECKOUT
   // THERE ARE NO ERROR & SECURITY CHECKS IN THIS SIMPLE EXAMPLE
   // BEEF UP THIS SECTION ON YOUR OWN!
-  case "checkout":
-    if ($cartLib->oAdd($_POST['name'], $_POST['email'])) {
+  // case "checkout":
+  //   if ($cartLib->oAdd($_POST['name'], $_POST['email'])) {
+  //     $_SESSION['cart'] = array();
+  //     echo "OK";
+  //   } else {
+  //     echo $cartLib->error;
+  //   }
+  //   break;
+
+     case "checkout":
+    if ($cartLib->oAdd("123", "123","123")) {//use dummy need to input `Addr`,`CID`,`LocID` 
       $_SESSION['cart'] = array();
       echo "OK";
     } else {

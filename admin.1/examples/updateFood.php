@@ -163,51 +163,51 @@
               <h5 class="title">Update Form</h5>
             </div>
             <form action="./updatef.php" method="POST">
+              <?php
+              $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+              if($conn->connect_error){
+                die("connection falied:". $conn-> connect_error);
+              }
+
+    $sql = "USE dpan6_3;";
+    if ($conn->query($sql) === TRUE) {
+
+    } else {
+       echo "Error using  database: " . $conn->error;
+    }
+              if (!empty($_POST))
+              {
+                $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
+                $result = $conn->query($sql);
+                if($result -> num_rows >0){
+                  $row = mysql_fetch_row($result);
+                  $FID = $row["FID"];
+                  $Fname = $row["Fname"];
+                  $Fprice = $row["Fprice"];
+                }
+                else{
+                  echo "0 result";
+                }
+              }else{
+                echo "no such food exists";
+              }
+
+              $conn -> close();
+              ?>
+              <div class="card-header">
+                <h7 class="title"><?php echo $FID; ?></h7>
+              </div>
             <div class="card-body">
                 <div class="row">
                   <div class="col-md-6 pr-md-1">
                     <div class="form-group">
-
-
-
-                      <?php
-                      $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
-                      if($conn->connect_error){
-                        die("connection falied:". $conn-> connect_error);
-                      }
-
-						$sql = "USE dpan6_3;";
-						if ($conn->query($sql) === TRUE) {
-
-						} else {
-						   echo "Error using  database: " . $conn->error;
-						}
-                      if (!empty($_POST))
-                      {
-                        $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
-                        $result = $conn->query($sql);
-                        if($result -> num_rows >0){
-                          $row = mysql_fetch_row($result);
-                          echo "<label>Food Name</label><input type=\"text\" class=\"form-control\" name=\"fname\" placeholder=\"". $row["Fname"] ."\"></div></div><div class=\"col-md-6 pl-md-1\"><div class=\"form-group\"><label>Food Price</label><input type=\"number\" class=\"form-control\" name=\"fprice\" placeholder=\"". $row["Fprice"] ."\">";
-                        }
-                        else{
-                          echo "0 result";
-                        }
-                      }else{
-                        echo "no such food exists";
-                      }
-
-                      $conn -> close();
-                      ?>
-
-
-                      <!-- <input type="text" class="form-control" name="fname" placeholder="Food Name">
+                    <input type="text" class="form-control" name="fname" value='<?php echo $Fname; ?>'>
                     </div>
                   </div>
                   <div class="col-md-6 pl-md-1">
                     <div class="form-group">
                       <label>Food Price</label>
-                      <input type="number" class="form-control" name="fprice" placeholder="Food Price"> -->
+                      <input type="text" class="form-control" name="fprice" value='<?php echo $Fprice; ?>'>
                     </div>
                   </div>
                 </div>

@@ -184,9 +184,9 @@
                   $FID = $row[0];
                   $Fname = $row[1];
                   $Fprice = $row[2];
-                  echo $FID;
-                  echo $Fname;
-                  echo $Fprice;
+                  echo "FID";
+                  echo "Fname";
+                  echo "Fprice";
                 }
                 else{
                   echo "      0 result";

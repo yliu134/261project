@@ -94,9 +94,9 @@ class User{
                 $i++;
             }
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
-            echo "'<script>console.log(\"$query\")</script>'";
             $insert = $this->db->query($query);
-            return $insert?$this->db->insert_id:false;
+            //return $insert?$this->db->insert_id:false;
+            return $insert?false:$this->db->insert_id;
         }else{
             return false;
         }

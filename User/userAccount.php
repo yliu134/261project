@@ -22,11 +22,11 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
             $userData['CID'] = mysql_insert_id();
             //set status based on data insert
             if($insert){
-                $sessData['status']['type'] = 'success';
-                $sessData['status']['msg'] = 'You have registered successfully, log in with your credentials.';
-            }else{
                 $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = $userData;
+                $sessData['status']['msg'] = $query;
+            }else{
+                $sessData['status']['type'] = 'success';
+                $sessData['status']['msg'] = $query;
             }
             
         }

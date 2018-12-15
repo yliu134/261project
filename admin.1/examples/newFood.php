@@ -145,7 +145,7 @@
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
                         <label>Food Price</label>
-                        <input type="text" class="form-control" name="fprice" placeholder="Food Price">
+                        <input type="number" class="form-control" name="fprice" placeholder="Food Price">
                       </div>
                     </div>
                   </div>

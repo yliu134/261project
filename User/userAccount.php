@@ -46,8 +46,7 @@ if(isset($_POST['signupSubmit'])){
     	 //get user data from user class
         $conditions['where'] = array(
             'CID' => $_POST['CID'],
-            'Password' => md5($_POST['Password']),
-            'status' => '1'
+            'Password' => md5($_POST['Password'])
         );
         $conditions['return_type'] = 'single';
         $userData = $user->getRows($conditions);

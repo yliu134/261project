@@ -36,16 +36,20 @@ if ($conn->query($sql2) === FALSE)
 
 
 if (isset($_POST['delete'])) {
-      echo "1 deliery group deleted";
+      $message = '<div class="alert alert-success" role="alert">1 deliery group deleted</div>';
   } else {
-      echo "1 deliery group updated";
+      $message = '<div class="alert alert-success" role="alert">1 deliery group updated</div>';
   }
 
 
 mysql_close($conn)
 
 ?>
-
+<div class="form-group">
+      <div class="col-sm-10 col-sm-offset-2">
+          <?php echo $message; ?>
+      </div>
+  </div>
 </body>
 
 </html>

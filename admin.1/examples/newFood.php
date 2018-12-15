@@ -133,9 +133,8 @@
               <div class="card-header">
                 <h5 class="title">New Food</h5>
               </div>
-              <form action="./insertf.php" method="post">
+              <form action="./insertf.php" method="POST">
               <div class="card-body">
-
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
@@ -150,7 +149,7 @@
                       </div>
                     </div>
                   </div>
-                </form>
+
               </div>
               <div class="card-footer">
                 <input type="submit" class="btn btn-fill btn-primary"/>

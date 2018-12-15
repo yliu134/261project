@@ -202,10 +202,12 @@
                   }
                 }
                 else{
-                  echo "\x20\x20\x200 result";
+                  echo str_repeat("&nbsp;", 10);
+                  echo "0 result";
                 }
               }else{
-                echo "\x20\x20\x20no such food exists";
+                echo str_repeat("&nbsp;", 10);
+                echo "no such food exists";
               }
 
               $conn -> close();

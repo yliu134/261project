@@ -28,6 +28,7 @@
     -->
       <div class="sidebar-wrapper">
         <ul class="nav">
+          <li>
             <a href="./food.php">
               <i class="tim-icons icon-bag-16"></i>
               <p>Food</p>

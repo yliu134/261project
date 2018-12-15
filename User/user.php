@@ -74,7 +74,7 @@ class User{
                 }
             }
         }
-        return !empty($data)?$data:false;
+        return !empty($data)?$data:$sql;
     }
 
     /*
@@ -95,8 +95,7 @@ class User{
             }
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
             $insert = $this->db->query($query);
-            return $insert?$this->db->insert_id:false;
-            //return $insert?false:$this->db->insert_id;
+            return $insert;
         }else{
             return false;
         }

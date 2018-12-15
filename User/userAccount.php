@@ -12,27 +12,20 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
             $sessData['status']['msg'] = 'Confirm password must match with the password.';
         }else{
 
-            //insert user data in the database
-            // $userData = array(
-            //     'Password' => $_POST['Password'],
-            //     'Username' => $_POST['Username'],
-            //     'Pnum' => $_POST['Pnum']
-            // );
             $userData = array(
-                'CID' => 200,
-                'Password' => 200,
-                'Username' => 'user_200',
-                'Pnum' => 200
+                'Password' => $_POST['Password'],
+                'Username' => $_POST['Username'],
+                'Pnum' => $_POST['Pnum']
             );
             $insert = $user->insert($userData);
             $userData['CID'] = mysql_insert_id();
             //set status based on data insert
             if($insert){
                 $sessData['status']['type'] = 'success';
-                $sessData['status']['msg'] = $query;
+                $sessData['status']['msg'] = 'Your userID is'.$userData['CID'];
             }else{
                 $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = $insert;
+                $sessData['status']['msg'] = 'Failed';
             }
             
         }
@@ -60,8 +53,8 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     if($userData){
             $sessData['userLoggedIn'] = TRUE;
             $sessData['CID'] = $userData['CID'];
-            $sessData['status']['type'] = 'success';
-            $sessData['status']['msg'] = 'Welcome '.$userData['Username'].'!';
+            $sessData['status']['type'] = 'error';
+            $sessData['status']['msg'] = $userData;
         }else{
             $sessData['status']['type'] = 'error';
             $sessData['status']['msg'] = 'Wrong email or password, please try again.';

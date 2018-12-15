@@ -54,7 +54,9 @@ session_write_close();
 
   <li>
             <a href="thank-you.php">
-              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); ?>"></i>
+              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); 
+              $_SESSION = [];
+              ?>"></i>
               <p>exit </p>
             </a>
           </li>

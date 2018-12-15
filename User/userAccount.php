@@ -26,7 +26,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 $sessData['status']['msg'] = 'You have registered successfully, log in with your credentials.';
             }else{
                 $sessData['status']['type'] = 'error';
-                $sessData['status']['msg'] = 'Some problem occurred, please try again.';
+                $sessData['status']['msg'] = $userData;
             }
             
         }
@@ -36,7 +36,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     }
     //store signup status into the session
     $_SESSION['sessData'] = $sessData;
-    $redirectURL = ($sessData['status']['type'] == 'success')?'../index.php':'registration.php';
+    $redirectURL = ($sessData['status']['type'] == 'success')?'../login-reg.php':'registration.php';
     //redirect to the home/registration page
     header("Location:".$redirectURL);
 }elseif(isset($_POST['loginSubmit'])){
@@ -67,7 +67,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     //store login status into the session
     $_SESSION['sessData'] = $sessData;
     //redirect to the home page
-    header("Location:../index.php");
+    header("Location:../login-reg.php");
 }elseif(!empty($_REQUEST['logoutSubmit'])){
     //remove session data
     unset($_SESSION['sessData']);
@@ -77,8 +77,8 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     $sessData['status']['msg'] = 'You have logout successfully from your account.';
     $_SESSION['sessData'] = $sessData;
     //redirect to the home page
-    header("Location:index.php");
+    header("Location:../login-reg.php");
 }else{
     //redirect to the home page
-    header("Location:index.php");
+    header("Location:../login-reg.php");
 }

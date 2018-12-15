@@ -186,9 +186,8 @@
                       {
                         $sql = "SELECT FID, Fname, Fprice from FOOD WHERE FID = $_POST[fid]";
                         $result = $conn->query($sql);
-                        $id = 0;
                         if($result -> num_rows >0){
-                          $id = $row["FID"];
+                          $row = mysql_fetch_row($result);
                           echo "<label>Food Name</label><input type=\"text\" class=\"form-control\" name=\"fname\" placeholder=". $row["Fname"] ."></div></div><div class=\"col-md-6 pl-md-1\"><div class=\"form-group\"><label>Food Price</label><input type=\"number\" class=\"form-control\" name=\"fprice\" placeholder=". $row["Fprice"] .">";
                         }
                         else{

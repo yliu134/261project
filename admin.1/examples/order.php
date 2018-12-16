@@ -275,7 +275,9 @@ session_write_close();
                               $sql3 = "SELECT Fname from FOOD WHERE FID=". $row2["FID"];
                               $result3 = $conn->query($sql3);
                               if($result3 -> num_rows > 0){
-                                 $m .= $row2["Fname"];
+                                while ($row3 = $result3 -> fetch_assoc()){
+                                  $m .= $row3["Fname"];
+                                }
                               }else{
                                 $m .= "N/A";
                               }

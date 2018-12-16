@@ -1,17 +1,6 @@
 <?php
-/* [INIT] */
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-function console_log( $data ){
-  echo '<script>';
-  echo 'console.log('. json_encode( $data ) .')';
-  echo '</script>';
-}
-
-
 session_start();
+/* [INIT] */
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
 require PATH_LIB . "lib-db.php";
 require PATH_LIB . "lib-cart.php";
@@ -125,12 +114,13 @@ switch ($_POST['req']) {
      if ($cartLib->oAdd($_SESSION['sessData']['CID'], $_POST['Addr'])) {
        $_SESSION['cart'] = array();
         echo "Order submitted";
-        // session_destroy();
-        // header("Location:index.php");
-        // session_write_close();
+        session_destroy();
+        header("Location:index.php");
+        session_write_close();
+
      } else {
        echo $cartLib->error;
-       
+
      }
     break;
 }

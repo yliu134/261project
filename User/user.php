@@ -95,8 +95,12 @@ class User{
             }
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
             $insert = $this->db->query($query);
-            //$last_id = $this->db->insert_id();
-            return $insert;
+            $query2 = "SELECT CID FROM CUSTOMER ORDER BY CID DESC LIMIT 1;";
+            $last_id = $this->db->query($query2);
+            if($last_id -> num_rows > 0){
+              $row = $last_id -> fetch_assoc()
+            }
+            return $row;
         }else{
             return false;
         }

@@ -225,6 +225,9 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <th>
                           Customer ID
                         </th>
+                        <th>
+                          Description
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -258,7 +261,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>aaa</td></tr>";
                         }
                       }else{
                         echo "0 result";

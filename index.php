@@ -49,7 +49,7 @@ session_write_close();
              <a href="User/userAccount.php?logoutSubmit=1">
               <button class="pdtAdd" onclick = "<?php session_destroy();
               $_SESSION = [];
-              ?>"></button>
+              ?>"> EXIT </button>
            
             </a>
         </li>

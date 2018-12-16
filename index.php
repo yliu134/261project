@@ -47,17 +47,14 @@ session_write_close();
             </a>
           </li>
  <h1>
-          hello Customer #
+          hello
           <?php
 
- //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
- // $sql = "SELECT Username from CUSTOMER where CID = ".$_SESSION['sessData']['CID'];
- // $result = $conn->query($sql);
- // $row = $result -> fetch_assoc();
- //  echo $row[1]; 
- //  echo $row[0]; 
-
+ $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
+ $result = $conn->query($sql);
+ echo $result; 
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 

@@ -272,7 +272,7 @@ session_write_close();
                               $m .= "<a class=\"dropdown-item\">";
                               $m .= $row2["Onum"];
                               $m .= "</a>";
-                              echo $m;
+                              //echo $m;
                             }
                           }
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";

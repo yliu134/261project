@@ -142,6 +142,39 @@
         </div>
       </div>
       <!-- End Navbar -->
+
+      <!-- Select -->
+      <div class="content">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header">
+                <h5 class="title">Search by Group Name</h5>
+              </div>
+              <form action="./delivery.php" method="POST">
+              <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6 pr-md-1">
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="form-control" name="lname" placeholder="Name">
+                      </div>
+                    </div>
+                  </div>
+
+              </div>
+              <div class="card-footer">
+                <input type="submit" class="btn btn-fill btn-primary"/>
+              </div>
+            </form>
+            </div>
+          </div>
+            </div>
+
+      <!-- End Select -->
+
+
+
       <div class="content">
         <div class="row">
           <div class="col-md-12">
@@ -176,7 +209,15 @@
 						} else {
 						   echo "Error using database: " . $conn->error;
 						}
-                      $sql = "SELECT LocID, Lname from DELIVERY_GROUP";
+
+                      if (!empty($_POST))
+                      {
+                        $sql = "SELECT LocID, Lname from DELIVERY_GROUP WHERE Lname LIKE '%$_POST[lname]%'";
+                      }else{
+                        $sql = "SELECT LocID, Lname from DELIVERY_GROUP";
+                      }
+
+
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){

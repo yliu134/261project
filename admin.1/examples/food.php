@@ -1,23 +1,19 @@
 <?php
 session_start();
-var_dump($_SESSION);
 if(isset($_POST['AdminSubmit'])){
   echo "admin submit";
   if(md5($_POST['Password']) == md5('admin')){
-    $_SESSION['loggedin'] = true;
+    $_SESSION['sessData']['loggedin'] = true;
   }
 }
-var_dump($_SESSION);
-if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin'] == true) {
     echo "Welcome, administrator";
-    echo session_id();
-    echo "NO";
 } else {
     session_destroy(); 
-    $_SESSION['loggedin'] = false;
+    $_SESSION['sessData']['loggedin'] = false;
     header("Location:../../User/login-reg.php");
-    session_write_close();
 }
+session_write_close();
 
 ?>
 
@@ -146,7 +142,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
                         <i class="tim-icons icon-bus-front-12" onclick = "<?php 
                         session_destroy(); 
-                        $_SESSION['loggedin'] = false;
+                        $_SESSION['sessData']['loggedin'] = false;
               ?>"></i>
                     </a>
                   </li>

@@ -12,8 +12,8 @@ if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin
     session_destroy(); 
     $_SESSION['sessData']['loggedin'] = false;
     header("Location:../../User/login-reg.php");
-    session_write_close();
 }
+session_write_close();
 
 ?>
 

@@ -207,7 +207,7 @@
                 }
               }else{
                 echo str_repeat("&nbsp;", 10);
-                echo "no such delivery group exists";
+                echo "Please search.";
               }
 
               $conn -> close();

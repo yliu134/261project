@@ -261,7 +261,7 @@ session_write_close();
 
 
                         while ($row = $result -> fetch_assoc()){
-                          $sql2 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row["Onum"];";
+                          $sql2 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row[\"Onum\"]";
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";
                         }
                       }else{

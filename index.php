@@ -56,13 +56,8 @@ session_write_close();
         </p>
 
  <h1>
-<<<<<<< HEAD
 
    <p>
-          hello Customer: 
-=======
-          hello Customer:
->>>>>>> 4a5053d940ace586941ae6b9e0acd7cceb93981f
           <?php
 
  //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");

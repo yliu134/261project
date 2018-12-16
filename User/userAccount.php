@@ -18,7 +18,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 'Pnum' => $_POST['Pnum']
             );
             $insert = $user->insert($userData);
-            $userData['CID'] = mysql_insert_id();
+            $userData['CID'] = $insert;
             echo $userData['CID'];
             //set status based on data insert
             if($insert){

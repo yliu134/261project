@@ -177,6 +177,7 @@
           <div class="card">
             <div class="card-header">
               <h5 class="title">Update Form</h5>
+              <h6 class="title">Note: You cannot delete a food that has been ordered before.</h6>
             </div>
             <form action="./updatef.php" method="POST">
               <?php
@@ -208,7 +209,7 @@
                 }
               }else{
                 echo str_repeat("&nbsp;", 10);
-                echo "no such food exists";
+                echo "Please search.";
               }
 
               $conn -> close();

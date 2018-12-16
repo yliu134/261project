@@ -177,6 +177,7 @@
           <div class="card">
             <div class="card-header">
               <h5 class="title">Update Form</h5>
+              <h6 class="title">Note: You cannot delete a delivery group that has been assigned to a order before.</h6>
             </div>
             <form action="./updated.php" method="POST">
               <?php
@@ -207,7 +208,7 @@
                 }
               }else{
                 echo str_repeat("&nbsp;", 10);
-                echo "no such delivery group exists";
+                echo "Please search.";
               }
 
               $conn -> close();

@@ -144,7 +144,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
                         <i class="tim-icons icon-bus-front-12" onclick = "<?php 
                         session_destroy(); 
-                        $_SESSION = [];
+                        $_SESSION['loggedin'] = NULL;
                         session_write_close();
               ?>"></i>
                     </a>

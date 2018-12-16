@@ -50,7 +50,7 @@ session_write_close();
               <button class="pdtAdd" onclick = "<?php session_destroy();
               $_SESSION = [];
               ?>"> EXIT </button>
-           
+
             </a>
 
         </p>
@@ -65,10 +65,10 @@ session_write_close();
  // $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
  // $result = $conn->query($sql);
  // echo $result;
- echo $_SESSION['sessData']['CID'];
+ echo "wwwwwww".$_SESSION['sessData']['CID'];
  ?>
 </p>
- 
+
 </h1>
 
 

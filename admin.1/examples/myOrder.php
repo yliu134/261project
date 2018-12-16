@@ -60,7 +60,7 @@
                           Address
                         </th>
                         <th>
-                          Time
+                          Time <?php $_SESSION['sessData']['CID']?>
                         </th>
                         <th>
                           Delivery Group

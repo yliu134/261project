@@ -1,17 +1,14 @@
 <?php
 session_start();
-var_dump($_SESSION);
-echo session_id();
-echo ini_get('session.cookie_domain');
-if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
     session_destroy();
-    $_SESSION['loggedin'] = NULL;
+    $_SESSION['sessData']['loggedin'] = false;
     header("Location:../../User/login-reg.php");
-    session_write_close();
 }
-
+session_write_close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +135,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
                         <i class="tim-icons icon-bus-front-12" onclick = "<?php
                         session_destroy();
-                        $_SESSION['loggedin'] = NULL;
+                        $_SESSION['sessData']['loggedin'] = false;
                         session_write_close();
               ?>"></i>
                     </a>
@@ -221,6 +218,9 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <th>
                           Customer ID
                         </th>
+                        <th>
+                          Description
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -251,28 +251,19 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                       $result = $conn->query($sql);
 
 
+
                       if($result -> num_rows > 0){
+                        $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button><div class=\"dropdown-menu\">";
+
+                          $m = "<a class=\"dropdown-item\" href=\"#\">Action</a>";
+
+                        $part2="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"#\">Separated link</a></div></div>";
+
+                        $m2 = "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button>";
+                        $m3 = "</div>";
+
                         while ($row = $result -> fetch_assoc()){
-                          // $sql1 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row["Onum"];";
-                          // $result2 = $conn->query($sql1);
-                          // if($result2 -> num_rows >0){
-                          //   while ($row = $result->fetch_object()) {
-                          //     $Onum = $row->Onum;
-                          //     $FID = $row->FID;
-                          //     $Quantity = $row->Quantity;
-                          //   }
-                          // }
-                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
-                          // echo "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-danger\">Action</button>
-                          //       <button type=\"button\" class=\"btn btn-danger dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                          //         <span class=\"sr-only\">Toggle Dropdown</span>
-                          //       </button>
-                          //       <div class=\"dropdown-menu\">
-                          //         <a class=\"dropdown-item\">Action</a>
-                          //         <a class=\"dropdown-item\">Another action</a>
-                          //         <a class=\"dropdown-item\">Something else here</a>
-                          //       </div>
-                          //     </div></tr>"
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";
                         }
                       }else{
                         echo "0 result";

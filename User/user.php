@@ -82,28 +82,22 @@ class User{
      * @param string name of the table
      * @param array the data for inserting into the table
      */
-    public function insert($data){
-        if(!empty($data) && is_array($data)){
-            $columns = '';
-            $values  = '';
-            $i = 0;
-            foreach($data as $key=>$val){
-                $pre = ($i > 0)?', ':'';
-                $columns .= $pre.$key;
-                $values  .= $pre."'".$val."'";
-                $i++;
-            }
-            $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
-            $insert = $this->db->query($query);
-            // $query2 = "SELECT CID FROM CUSTOMER ORDER BY CID DESC LIMIT 1;";
-            // $row = "";
-            // $last_id = $this->db->query($query2);
-            // if($last_id -> num_rows > 0){
-            //   $row = $last_id -> fetch_assoc()
-            // }
-            return $insert;
-        }else{
-            return false;
-        }
-    }
+     public function insert($data){
+         if(!empty($data) && is_array($data)){
+             $columns = '';
+             $values  = '';
+             $i = 0;
+             foreach($data as $key=>$val){
+                 $pre = ($i > 0)?', ':'';
+                 $columns .= $pre.$key;
+                 $values  .= $pre."'".$val."'";
+                 $i++;
+             }
+             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
+             $insert = $this->db->query($query);
+             return $insert;
+         }else{
+             return false;
+         }
+     }
 }

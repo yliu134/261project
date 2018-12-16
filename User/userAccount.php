@@ -17,7 +17,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 'Username' => $_POST['Username'],
                 'Pnum' => $_POST['Pnum']
             );
-            $row = $user->insert($userData);
+            $insert = $user->insert($userData);
             //$newId =$row['CID'];
             $newId ="dd";
             //echo $newId."2222";

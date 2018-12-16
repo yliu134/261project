@@ -5,11 +5,8 @@ $sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:'';
 if(!empty($sessData['userLoggedIn']) && !empty($sessData['CID'])){
 
 }else{
-    header("Location:User/login-reg.php");
+    header("Location:../../User/login-reg.php");
 }
-require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
-require PATH_LIB . "lib-db.php";
-require PATH_LIB . "lib-cart.php";
 session_write_close();
 /* [DRAW HTML] */
 ?>
@@ -102,7 +99,6 @@ session_write_close();
             $iid = $_SESSION['sessData']['CID'];
            
             $test = 10;
-            var_dump($iid);
                        $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ".$iid;
                        
                       $result = $conn->query($sql);

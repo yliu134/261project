@@ -35,7 +35,7 @@ session_write_close();
 
     <!-- [HEADER] -->
     <header id="page-header">
-      My Awesome Site 
+      My Awesome Site
       <div id="page-cart" onclick="cart.toggle();">
         &#128722; <span id="page-cart-count">0</span>
       </div>
@@ -47,13 +47,13 @@ session_write_close();
             </a>
           </li>
  <h1>
-          hello 
+          hello
           <?php echo $_SESSION['sessData']['CID']; ?>
 </h1>
 
   <li>
             <a href="User/userAccount.php?logoutSubmit=1">
-              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); 
+              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
               $_SESSION = [];
               ?>"></i>
               <p>exit </p>
@@ -63,18 +63,18 @@ session_write_close();
 
     </header>
 
-    <!-- [PRODUCTS] -->	
+    <!-- [PRODUCTS] -->
     <div id="products"><?php
       if (is_array($products)) {
         foreach ($products as $id => $row) {
           ?>
           <div class="pdt">
-            <img src="images/<?= $row['product_image'] ?>"/>
+            <img src="images/food.jpg"/>
             <h3 class="pdtName"><?= $row['Fname'] ?></h3>
             <div class="pdtPrice">$<?= $row['Fprice'] ?></div>
             <div class="pdtDesc"><?= $row['product_description'] ?></div>
             <input class="pdtAdd" type="button" value="Add to cart" onclick="cart.add(<?= $row['FID'] ?>);"/>
-         
+
           </div>
         <?php
         }

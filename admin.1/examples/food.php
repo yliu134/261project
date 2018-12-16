@@ -1,6 +1,8 @@
 <?php
 session_start();
+var_dump($_SESSION);
 if(isset($_POST['AdminSubmit'])){
+  echo "admin submit";
   if(md5($_POST['Password']) == md5('admin')){
     $_SESSION['loggedin'] = true;
   }
@@ -9,6 +11,8 @@ if(isset($_POST['AdminSubmit'])){
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
+    session_destroy(); 
+    $_SESSION = [];
     header("Location:../../User/login-reg.php");
 }
 session_write_close();
@@ -137,8 +141,10 @@ session_write_close();
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
-                        <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); 
-              $_SESSION = [];
+                        <i class="tim-icons icon-bus-front-12" onclick = "<?php 
+                        session_destroy(); 
+                        $_SESSION = [];
+                        session_write_close();
               ?>"></i>
                     </a>
                   </li>

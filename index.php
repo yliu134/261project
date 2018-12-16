@@ -62,7 +62,7 @@ session_write_close();
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
               $_SESSION = [];
               ?>"></i>
-              <p>exit </p>
+              <button class="pdtAdd">Log out</button>
             </a>
           </li>
 

@@ -69,7 +69,7 @@ session_write_close();
         foreach ($products as $id => $row) {
           ?>
           <div class="pdt">
-            <img src="images/food.jpg"/>
+            <img src="images/food.jpg" width="30%" height="30%"/>
             <h3 class="pdtName"><?= $row['Fname'] ?></h3>
             <div class="pdtPrice">$<?= $row['Fprice'] ?></div>
             <div class="pdtDesc"><?= $row['product_description'] ?></div>

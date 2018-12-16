@@ -127,8 +127,8 @@ switch ($_POST['req']) {
         // session_destroy();
         echo "Order submitted";
         //header("Location:User/login-reg.php");
-   //      header("Location:User/login-reg.php");
-   // exit;
+        header("Location:User/login-reg.php");
+   exit;
 
      } else {
        echo "There is an error";

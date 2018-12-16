@@ -52,11 +52,12 @@ session_write_close();
               ?>"> EXIT </button>
            
             </a>
-        </li>
 
         </p>
 
  <h1>
+
+   <p>
           hello Customer: 
           <?php
 
@@ -67,6 +68,8 @@ session_write_close();
  // echo $result;
  echo $_SESSION['sessData']['CID'];
  ?>
+</p>
+ 
 </h1>
 
 

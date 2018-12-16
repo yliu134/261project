@@ -126,9 +126,9 @@ switch ($_POST['req']) {
        $_SESSION['cart'] = array();
         echo "Order submitted";
         // session_destroy();
-        // header("Location:index.php");
-        // session_write_close();
-        
+        header("Location:User/login-reg.php");
+        session_write_close();
+
      } else {
        echo $cartLib->error;
 

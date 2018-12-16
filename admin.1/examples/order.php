@@ -1,8 +1,5 @@
 <?php
 session_start();
-var_dump($_SESSION);
-echo session_id();
-var_dump($_POST);
 
 if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin'] == true) {
     echo "Welcome, administrator";
@@ -138,7 +135,7 @@ session_write_close();
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
                         <i class="tim-icons icon-bus-front-12" onclick = "<?php
                         session_destroy();
-                        $_SESSION['sessData']['loggedin'] = NULL;
+                        $_SESSION['sessData']['loggedin'] = false;
                         session_write_close();
               ?>"></i>
                     </a>

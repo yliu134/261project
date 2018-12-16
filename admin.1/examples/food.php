@@ -1,7 +1,6 @@
 <?php
 session_start();
 if(isset($_POST['AdminSubmit'])){
-  echo "admin submit";
   if(md5($_POST['Password']) == md5('admin')){
     $_SESSION['sessData']['loggedin'] = true;
   }
@@ -141,8 +140,9 @@ session_write_close();
                   <li class="nav-link">
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
                         <i class="tim-icons icon-bus-front-12" onclick = "<?php 
-                        session_destroy(); 
+                        session_destroy();
                         $_SESSION['sessData']['loggedin'] = false;
+                        session_write_close();
               ?>"></i>
                     </a>
                   </li>

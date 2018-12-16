@@ -11,7 +11,7 @@ if(isset($_POST['AdminSubmit'])){
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
-    session_destroy(); 
+    session_destroy();
     $_SESSION['loggedin'] = NULL;
     //header("Location:../../User/login-reg.php");
     session_write_close();
@@ -141,8 +141,8 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
-                        <i class="tim-icons icon-bus-front-12" onclick = "<?php 
-                        session_destroy(); 
+                        <i class="tim-icons icon-bus-front-12" onclick = "<?php
+                        session_destroy();
                         $_SESSION['loggedin'] = NULL;
                         session_write_close();
               ?>"></i>
@@ -244,21 +244,23 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                       if (!empty($_POST))
                       {
-                        $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS WHERE CID=$_POST[cid]";
+                        if (!isset($_POST[cid]) || empty($_POST[cid])) {
+                          $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS";
+                        }else{
+                          $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS WHERE CID=$_POST[cid]";
+                        }
                       }else{
                         $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS";
                       }
 
-
-
                       $result = $conn->query($sql);
+
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
                         }
-                      }
-                      else{
+                      }else{
                         echo "0 result";
                       }
 

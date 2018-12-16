@@ -64,7 +64,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </a>
           </li>
           <li >
-            <a href="./order.php">
+            <a href="./order.php?a=loggedin">
               <i class="tim-icons icon-calendar-60"></i>
               <p>Orders</p>
             </a>

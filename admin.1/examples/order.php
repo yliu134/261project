@@ -3,6 +3,10 @@ session_start();
 var_dump($_SESSION);
 echo session_id();
 echo ini_get('session.cookie_domain');
+if(isset($_GET['a']) /*you can validate the link here*/){
+    $_SESSION['loggedin']= true;
+ }
+
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {

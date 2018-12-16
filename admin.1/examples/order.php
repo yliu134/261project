@@ -262,17 +262,17 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                               $Quantity = $row->Quantity;
                             }
                           }
-                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td>";
-                          echo "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-danger\">Action</button>
-                                <button type=\"button\" class=\"btn btn-danger dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
-                                  <span class=\"sr-only\">Toggle Dropdown</span>
-                                </button>
-                                <div class=\"dropdown-menu\">
-                                  <a class=\"dropdown-item\">Action</a>
-                                  <a class=\"dropdown-item\">Another action</a>
-                                  <a class=\"dropdown-item\">Something else here</a>
-                                </div>
-                              </div></tr>"
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
+                          // echo "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-danger\">Action</button>
+                          //       <button type=\"button\" class=\"btn btn-danger dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+                          //         <span class=\"sr-only\">Toggle Dropdown</span>
+                          //       </button>
+                          //       <div class=\"dropdown-menu\">
+                          //         <a class=\"dropdown-item\">Action</a>
+                          //         <a class=\"dropdown-item\">Another action</a>
+                          //         <a class=\"dropdown-item\">Something else here</a>
+                          //       </div>
+                          //     </div></tr>"
                         }
                       }else{
                         echo "0 result";

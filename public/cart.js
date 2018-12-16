@@ -82,7 +82,7 @@ var cart = {
       load : function (res) {
         //if (res=="OK") {
           if(true){
-          window.location = "./thank-you.php";
+          window.location = "./User/login-reg.php";
         } else {
           gen.nShow(res);
         }

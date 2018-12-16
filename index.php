@@ -5,7 +5,6 @@ $sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:'';
 if(!empty($sessData['userLoggedIn']) && !empty($sessData['CID'])){
 
 }else{
-  var_dump($sessData);
     header("Location:User/login-reg.php");
 }
 require __DIR__ . DIRECTORY_SEPARATOR . "lib" . DIRECTORY_SEPARATOR . "config.php";
@@ -53,7 +52,7 @@ session_write_close();
 </h1>
 
   <li>
-            <a href="userAccount.php?logoutSubmit=1">
+            <a href="User/userAccount.php?logoutSubmit=1">
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); 
               $_SESSION = [];
               ?>"></i>

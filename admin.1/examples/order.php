@@ -271,6 +271,10 @@ session_write_close();
                               //$m = $m. "<a class=\"dropdown-item\">".$row2["Onum"]."-".$row2["FID"]."-".$row2["Quantity"]."</a>";
                               $m .= "<a class=\"dropdown-item\">";
                               $m .= $row2["Onum"];
+                              $m .= "--";
+                              $m .= $row2["FID"];
+                              $m .= "--";
+                              $m .= $row2["Quantity"];
                               $m .= "</a>";
                               //echo $m;
                             }

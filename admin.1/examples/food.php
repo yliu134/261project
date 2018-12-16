@@ -136,7 +136,11 @@ session_write_close();
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
-                    <a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a>
+                    <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
+                        <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy(); 
+              $_SESSION = [];
+              ?>"></i>
+                    </a>
                   </li>
                 </ul>
               </li>

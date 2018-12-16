@@ -86,8 +86,9 @@
 
             $iid = $_SESSION['sessData']['CID'];
             var_dump($iid);
-                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ";
-                      $result = $conn->query($sql.$iid.";");
+                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ".$iid;
+                       
+                      $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){

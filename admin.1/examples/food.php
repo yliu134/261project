@@ -7,12 +7,12 @@ if(isset($_POST['AdminSubmit'])){
     $_SESSION['loggedin'] = true;
   }
 }
-
+echo session_id();
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
     session_destroy(); 
-    $_SESSION['loggedin'] = NULL;
+    $_SESSION['loggedin'] = false;
     //header("Location:../../User/login-reg.php");
     session_write_close();
 }
@@ -144,8 +144,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
                         <i class="tim-icons icon-bus-front-12" onclick = "<?php 
                         session_destroy(); 
-                        $_SESSION['loggedin'] = NULL;
-                        session_write_close();
+                        $_SESSION['loggedin'] = false;
               ?>"></i>
                     </a>
                   </li>

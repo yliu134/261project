@@ -1,13 +1,8 @@
 <?php
 session_start();
 var_dump($_SESSION);
-if(isset($_POST['AdminSubmit'])){
-  echo "admin submit";
-  if(md5($_POST['Password']) == md5('admin')){
-    $_SESSION['loggedin'] = true;
-  }
-}
-
+echo session_id();
+echo ini_get('session.cookie_domain');
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {

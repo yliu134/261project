@@ -39,11 +39,11 @@ h2 {
     border: none;
     outline: none;
     color: #FFF;
-    background-color: #912cee;
+    background-color: #A82828;
     cursor: pointer;
 }
 .send-button input[type="submit"]:hover {
-    background-color: #055d54;
+    background-color: #d39393;
 }
 a.logout{float: right;}
 p.success{color:#34A853;}

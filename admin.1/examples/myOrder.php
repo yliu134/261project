@@ -85,7 +85,7 @@
 						}
 
             $iid = $_SESSION['sessData']['CID'];
-            $test = 10
+            $test = 10;
             var_dump($iid);
                        $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ".$test;
                        

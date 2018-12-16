@@ -263,9 +263,9 @@ session_write_close();
 
                           $m = "<a class=\"dropdown-item\" href=\"#\">Action</a>";
 
-                        $part2="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"#\">Separated link</a></div>";
+                        $part2="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"#\">Separated link</a></div></div>";
 
-                        $m2 = "<div>";
+                        $m2 = "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-danger dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button>";
                         $m3 = "</div>";
 
                         while ($row = $result -> fetch_assoc()){

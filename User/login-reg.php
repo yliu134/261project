@@ -49,7 +49,7 @@ session_write_close();
                 <input type="submit" name="AdminSubmit" value="ADMIN_LOGIN">
             </div>
         </form>
-        <p>Please use 'Admin' as the log-in credential</p>
+        <p style="color:#FF0000";>Please use 'admin' as the log-in credential</p>
     </div>
     <?php } ?>
 </div>

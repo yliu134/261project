@@ -268,9 +268,11 @@ session_write_close();
                             while ($row2 = $result2 -> fetch_assoc()){
                               //$m = $m. "<a class=\"dropdown-item\">".$row2["Onum"]."-".$row2["FID"]."-".$row2["Quantity"]."</a>";
                               $m .= "<a class=\"dropdown-item\">";
-                              //$m .= $row2["Onum"];
+                              $m .= $row2["Onum"];
+                              $m .= $row2["FID"];
+                              $m .= $row2["Quantity"];
                               $m .= "</a>";
-                              echo $m;
+
                             }
                           }
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";

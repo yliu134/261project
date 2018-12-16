@@ -44,9 +44,16 @@ session_write_close();
             <a href="./admin.1/examples/myOrder.php">
               <button class="pdtAdd">My Orders</button>
             </a>
+
+             <a href="User/userAccount.php?logoutSubmit=1">
+              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
+              $_SESSION = [];
+              ?>"></i>
+              <button class="pdtAdd"> exit </button>
+            </a>
         </li>
  <h1>
-          hello
+          hello Customer #
           <?php
 
           $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
@@ -58,12 +65,7 @@ session_write_close();
 </h1>
 
   <li>
-            <a href="User/userAccount.php?logoutSubmit=1">
-              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
-              $_SESSION = [];
-              ?>"></i>
-              <p align="right">exit </p>
-            </a>
+
           </li>
 
 

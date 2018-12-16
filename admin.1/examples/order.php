@@ -8,7 +8,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 } else {
     session_destroy();
     $_SESSION['loggedin'] = NULL;
-    //header("Location:../../User/login-reg.php");
+    header("Location:../../User/login-reg.php");
     session_write_close();
 }
 

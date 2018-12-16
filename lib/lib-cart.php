@@ -38,10 +38,12 @@ class Cart extends DB {
   // ! READS DATA FROM SESSION CART !
 
     // Init
-    $LocID = 1;
+    $LocID = 5;
     $this->start();
 
     // Create the order
+    echo $CID; 
+    echo $Addr;
     $sql = "INSERT INTO `ORDERS` (`Addr`,`CID`,`LocID`) VALUES (?, ?, ?)";
     $cond = [$Addr,$CID,$LocID];
     $pass = $this->exec($sql, $cond);

@@ -82,7 +82,7 @@ switch ($_POST['req']) {
       </tr>
     </table>
     <?php if ($total > 0) { ?>
-      <form id="cart-checkout" onsubmit="return cart.checkout($_SESSION['sessData']['CID']);">
+      <form id="cart-checkout" onsubmit="return cart.checkout(<?php $_SESSION['sessData']['CID']; ?>)">
         Address: <input type="text" id="Addr" required/>
         <input type="submit" value="Checkout"/>
       </form>
@@ -122,12 +122,12 @@ switch ($_POST['req']) {
   //   break;
 
       case "checkout":      
-    // if ($cartLib->oAdd("test", "test2")) {
-    //   $_SESSION['cart'] = array();
-       echo "OK";
-    // } else {
-    //   echo $cartLib->error;
-    // }
+     if ($cartLib->oAdd($_POST['CID'], $_POST['Addr'])) {
+       $_SESSION['cart'] = array();
+       echo "OKok";
+     } else {
+       echo $cartLib->error;
+     }
     break;
 }
 ?>

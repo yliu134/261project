@@ -70,9 +70,11 @@ mysql_close($conn)
             <div class="card">
               <div class="card-body">
                 <div class="alert alert-info">
+                  <a href="./delivery.php">
                   <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
-                    <i class="tim-icons icon-simple-remove"></i>
+                    <i class="tim-icons icon-check-2"></i>
                   </button>
+                </a>
                   <span><?php echo $message; ?></span>
                 </div>
               </div>

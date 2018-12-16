@@ -1,22 +1,17 @@
 <?php
 session_start();
 var_dump($_SESSION);
-if(isset($_POST['AdminSubmit'])){
-  echo "admin submit";
-  if(md5($_POST['Password']) == md5('admin')){
-    $_SESSION['loggedin'] = true;
-  }
-}
+echo session_id();
+var_dump($_POST);
 
-if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
-    session_destroy(); 
-    $_SESSION['loggedin'] = NULL;
+    session_destroy();
+    $_SESSION['sessData']['loggedin'] = false;
     header("Location:../../User/login-reg.php");
-    session_write_close();
 }
-
+session_write_close();
 ?>
 <!DOCTYPE html>
 <html lang="en">

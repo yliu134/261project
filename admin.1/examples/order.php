@@ -3,9 +3,6 @@ session_start();
 var_dump($_SESSION);
 echo session_id();
 var_dump($_POST);
-if(isset($_POST['a'])){
-    $_SESSION['sessData']['loggedin']= true;
- }
 
 if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin'] == true) {
     echo "Welcome, administrator";

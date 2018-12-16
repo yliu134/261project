@@ -48,9 +48,8 @@ session_write_close();
 
              <a href="User/userAccount.php?logoutSubmit=1">
               <button class="pdtAdd" onclick = "<?php session_destroy();
-              $_SESSION = [];
-              ?>"> EXIT </button>
-           
+              $_SESSION = [];?>"> EXIT </button>
+
             </a>
 
         </p>
@@ -58,18 +57,12 @@ session_write_close();
  <h1>
 
    <p>
-    
-          <?php
 
- //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
- // $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
- // $result = $conn->query($sql);
- // echo $result;
- echo $_SESSION['sessData']['CID'];
- ?>
+<?php echo $_SESSION['sessData']['CID'];?>
+
 </p>
- 
+
 </h1>
 
 

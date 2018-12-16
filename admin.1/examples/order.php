@@ -264,6 +264,7 @@ session_write_close();
                           $sql2 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=". $row["Onum"];
                           $result2 = $conn->query($sql2);
                           if($result2 -> num_rows > 0){
+                            echo"dddddddddddd";
                             while ($row2 = $result2 -> fetch_assoc()){
                               $m = $m. "<a class=\"dropdown-item\">".$row2["Onum"]."-".$row2["FID"]."-".$row2["Quantity"]."</a>";
                             }

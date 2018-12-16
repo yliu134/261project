@@ -78,7 +78,7 @@ var cart = {
         CID : id,
         Addr: addr
       },
-      // silent : 1,
+       silent : 1,
       load : function (res) {
         if (res=="OK") {
           window.location = "thank-you.php";

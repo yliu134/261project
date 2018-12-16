@@ -23,30 +23,29 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
 
 
 
-            // <?php
-            // $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
-            // if($conn->connect_error){
-            //   die("connection failed:". $conn-> connect_error);
-            // }
-            //
-            // $sql = "USE dpan6_3;";
-            // if ($conn->query($sql) === TRUE) {
-            //
-            // } else {
-            //    echo "Error using  database: " . $conn->error;
-            // }
-            //
-            // $sql = "SELECT CID FROM CUSTOMER ORDER BY CID DESC LIMIT 1";
-            // $result = $conn->query($sql);
-            //
-            // if($result -> num_rows > 0){
-            //   $row = $result -> fetch_assoc();
-            //   $newId = $row["CID"];
-            //   echo $newId;
-            // }
-            //
-            // $conn -> close();
-            // 
+
+            $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+            if($conn->connect_error){
+              die("connection failed:". $conn-> connect_error);
+            }
+
+            $sql = "USE dpan6_3;";
+            if ($conn->query($sql) === TRUE) {
+
+            } else {
+               echo "Error using  database: " . $conn->error;
+            }
+
+            $sql = "SELECT CID FROM CUSTOMER ORDER BY CID DESC LIMIT 1";
+            $result = $conn->query($sql);
+
+            if($result -> num_rows > 0){
+              $row = $result -> fetch_assoc();
+              $newId = $row["CID"];
+              echo $newId;
+            }
+
+            $conn -> close();
 
 
             if($insert){

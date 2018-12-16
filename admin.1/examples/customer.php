@@ -11,7 +11,7 @@ if(isset($_POST['AdminSubmit'])){
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
-    session_destroy(); 
+    session_destroy();
     $_SESSION['loggedin'] = NULL;
     header("Location:../../User/login-reg.php");
     session_write_close();
@@ -141,8 +141,8 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <ul class="dropdown-menu dropdown-navbar">
                   <li class="nav-link">
                     <a href="../../User/login-reg.php" class="nav-item dropdown-item">Log out
-                        <i class="tim-icons icon-bus-front-12" onclick = "<?php 
-                        session_destroy(); 
+                        <i class="tim-icons icon-bus-front-12" onclick = "<?php
+                        session_destroy();
                         $_SESSION['loggedin'] = NULL;
                         session_write_close();
               ?>"></i>
@@ -237,12 +237,16 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                 if (!empty($_POST))
                 {
-                  $sql = "SELECT CID, Username, Pnum from CUSTOMER WHERE CID = $_POST[cid]";
+                  if (!isset($_POST[cid]) || empty($_POST[cid])) {
+                    $sql = "SELECT CID, Username, Pnum from CUSTOMER";
+                  }else{
+                    $sql = "SELECT CID, Username, Pnum from CUSTOMER WHERE CID = $_POST[cid]";
+                  }
+
                 }else{
                   $sql = "SELECT CID, Username, Pnum from CUSTOMER";
                 }
-
-
+                  
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){

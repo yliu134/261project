@@ -56,7 +56,7 @@ class Cart extends DB {
       $cond = [];
       foreach ($_SESSION['cart'] as $id=>$qty) {
         $sql .= "(?, ?, ?),";
-        array_push($cond, $this-> $id, $qty);
+        array_push($cond, $this-> lastID, $id, $qty);
       }
       $sql = substr($sql, 0, -1) . ";"; // strip last comma
       $pass = $this->exec($sql, $cond);

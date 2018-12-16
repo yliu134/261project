@@ -3,7 +3,7 @@ session_start();
 var_dump($_SESSION);
 echo session_id();
 echo ini_get('session.cookie_domain');
-if(isset($_GET['a']) /*you can validate the link here*/){
+if(isset($_POST['a'])){
     $_SESSION['loggedin']= true;
  }
 

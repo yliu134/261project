@@ -82,7 +82,7 @@ switch ($_POST['req']) {
       </tr>
     </table>
     <?php if ($total > 0) { ?>
-      <form id="cart-checkout" onsubmit="return cart.checkout(<?php $_SESSION['sessData']['CID']); ?>">
+      <form id="cart-checkout" onsubmit="return cart.checkout(<?php $_SESSION['sessData']['CID']; ?>)">
         Address: <input type="text" id="Addr" required/>
         <input type="submit" value="Checkout"/>
       </form>

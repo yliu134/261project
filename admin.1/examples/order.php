@@ -253,15 +253,15 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          $sql1 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row["Onum"];";
-                          $result2 = $conn->query($sql1);
-                          if($result2 -> num_rows >0){
-                            while ($row = $result->fetch_object()) {
-                              $Onum = $row->Onum;
-                              $FID = $row->FID;
-                              $Quantity = $row->Quantity;
-                            }
-                          }
+                          // $sql1 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row["Onum"];";
+                          // $result2 = $conn->query($sql1);
+                          // if($result2 -> num_rows >0){
+                          //   while ($row = $result->fetch_object()) {
+                          //     $Onum = $row->Onum;
+                          //     $FID = $row->FID;
+                          //     $Quantity = $row->Quantity;
+                          //   }
+                          // }
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
                           // echo "<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-danger\">Action</button>
                           //       <button type=\"button\" class=\"btn btn-danger dropdown-toggle dropdown-toggle-split\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">

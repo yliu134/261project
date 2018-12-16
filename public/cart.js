@@ -80,7 +80,8 @@ var cart = {
       },
        silent : 1,
       load : function (res) {
-        if (res=="OK") {
+        //if (res=="OK") {
+          if(true){
           window.location = "thank-you.php";
         } else {
           gen.nShow(res);

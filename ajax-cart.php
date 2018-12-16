@@ -124,7 +124,10 @@ switch ($_POST['req']) {
       case "checkout":      
      if ($cartLib->oAdd($_SESSION['sessData']['CID'], $_POST['Addr'])) {
        $_SESSION['cart'] = array();
-       echo "OK";
+        echo "Order submitted";
+        header("Location:index.php");
+        $_SESSION['cart'] = NULL;
+        session_write_close();
      } else {
        echo $cartLib->error;
      }

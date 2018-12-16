@@ -47,10 +47,10 @@ session_write_close();
 
 
              <a href="User/userAccount.php?logoutSubmit=1">
-              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
+              <button class="pdtAdd" onclick = "<?php session_destroy();
               $_SESSION = [];
-              ?>"></i>
-              <button class="pdtAdd"> exit </button>
+              ?>"></button>
+           
             </a>
         </li>
 

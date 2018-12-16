@@ -48,7 +48,11 @@ session_write_close();
           </li>
  <h1>
           hello
-          <?php echo $_SESSION['sessData']['CID']; ?>
+          <?  
+ $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ".$_SESSION['sessData']['CID'];
+
+echo $sql; 
+          php echo $_SESSION['sessData']['CID']; ?>
 </h1>
 
   <li>

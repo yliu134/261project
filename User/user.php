@@ -95,6 +95,7 @@ class User{
             }
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
             $insert = $this->db->query($query);
+            
             return $insert;
         }else{
             return false;

@@ -28,7 +28,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 $sessData['status']['type'] = 'error';
                 $sessData['status']['msg'] = 'Failed';
             }
-            
+
         }
     }else{
         $sessData['status']['type'] = 'error';
@@ -42,7 +42,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
     session_write_close();
 }elseif(isset($_POST['loginSubmit'])){
     if(!empty($_POST['CID']) && !empty($_POST['Password'])){
-    echo "1";   
+    echo "1";
     var_dump($_POST);
 
     $conditions['where'] = array(
@@ -59,11 +59,11 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
             $sessData['status']['msg'] = $userData;
         }else{
             $sessData['status']['type'] = 'error';
-            $sessData['status']['msg'] = 'Wrong email or password, please try again.';
+            $sessData['status']['msg'] = 'Wrong ID or password, please try again.';
         }
     }else{
         $sessData['status']['type'] = 'error';
-        $sessData['status']['msg'] = 'Enter email and password.';
+        $sessData['status']['msg'] = 'Enter ID and password.';
     }
     //store login status into the session
     $_SESSION['sessData'] = $sessData;

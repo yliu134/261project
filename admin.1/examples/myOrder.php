@@ -1,3 +1,15 @@
+<?php
+/* [INIT] */
+session_start();
+$sessData = !empty($_SESSION['sessData'])?$_SESSION['sessData']:'';
+if(!empty($sessData['userLoggedIn']) && !empty($sessData['CID'])){
+
+}else{
+    header("Location:../../User/login-reg.php");
+}
+session_write_close();
+/* [DRAW HTML] */
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -85,8 +97,10 @@
 						}
 
             $iid = $_SESSION['sessData']['CID'];
-            var_dump($iid);
-                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = $iid";
+           
+            $test = 10;
+                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ".$iid;
+                       
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){

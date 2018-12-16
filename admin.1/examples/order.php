@@ -263,16 +263,15 @@ session_write_close();
                         while ($row = $result -> fetch_assoc()){
                           $sql2 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=". $row["Onum"];
                           $result2 = $conn->query($sql2);
+                          $m = "<a class=\"dropdown-item\">items:</a>";
                           if($result2 -> num_rows > 0){
-                            $m = "<a class=\"dropdown-item\">items:</a>";
                             while ($row2 = $result2 -> fetch_assoc()){
+
                               //$m = $m. "<a class=\"dropdown-item\">".$row2["Onum"]."-".$row2["FID"]."-".$row2["Quantity"]."</a>";
                               $m .= "<a class=\"dropdown-item\">";
                               $m .= $row2["Onum"];
-                              $m .= $row2["FID"];
-                              $m .= $row2["Quantity"];
                               $m .= "</a>";
-
+                              echo $m;
                             }
                           }
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";

@@ -255,7 +255,7 @@ session_write_close();
                       if($result -> num_rows > 0){
                         $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button><div class=\"dropdown-menu\">";
 
-                          $m = "";
+                          $m = "<a class=\"dropdown-item\">asasasa</a>";
 
                         $part2="</div></div>";
 
@@ -264,10 +264,9 @@ session_write_close();
                           $sql2 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=". $row["Onum"];
                           $result2 = $conn->query($sql2);
                           if($result2 -> num_rows > 0){
-                            echo"dddddddddddd";
                             while ($row2 = $result2 -> fetch_assoc()){
                               //$m = $m. "<a class=\"dropdown-item\">".$row2["Onum"]."-".$row2["FID"]."-".$row2["Quantity"]."</a>";
-                              $m = $m."<a class=\"dropdown-item\">asasasa</a>";
+                              //$m = $m."<a class=\"dropdown-item\">asasasa</a>";
                             }
                           }
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";

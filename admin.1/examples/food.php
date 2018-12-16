@@ -7,9 +7,12 @@ if(isset($_POST['AdminSubmit'])){
     $_SESSION['loggedin'] = true;
   }
 }
-echo session_id();
+
 if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
+    echo session_id();
+    echo ini_get('session.cookie_domain');
+    echo "NO";
 } else {
     session_destroy(); 
     $_SESSION['loggedin'] = false;

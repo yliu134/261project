@@ -74,16 +74,6 @@ session_write_close();
 
           </li>
 
-  <!-- <p>
-            <a href="User/userAccount.php?logoutSubmit=1">
-              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
-              $_SESSION = [];
-              ?>"></i>
-              <p align="right">exit </p>
-            </a>
-          </p> -->
-
-
     </header>
 
     <!-- [PRODUCTS] -->

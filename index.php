@@ -44,7 +44,7 @@ session_write_close();
             <a href="./admin.1/examples/myOrder.php">
               <button class="pdtAdd">My Orders</button>
             </a>
-<<<<<<< HEAD
+
 
              <a href="User/userAccount.php?logoutSubmit=1">
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
@@ -53,9 +53,9 @@ session_write_close();
               <button class="pdtAdd"> exit </button>
             </a>
         </li>
-=======
+
         </p>
->>>>>>> fb71826c29e17cc69a260b55700c3a266f116d5c
+
  <h1>
           hello Customer #
           <?php

@@ -22,8 +22,9 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
             //set status based on data insert
             if($insert){
                 $sessData['status']['type'] = 'success';
-                $sessData['status']['msg'] = 'Your userID is'.$userData['CID'];
+                $sessData['status']['msg'] = 'Sign up successful! Your userID is '.$userData['CID'];
                 $sessData['CID'] = $userData['CID'];
+                echo '<script type="text/javascript">alert("'.$sessData['status']['msg'].'");</script>';
             }else{
                 $sessData['status']['type'] = 'error';
                 $sessData['status']['msg'] = 'Failed';

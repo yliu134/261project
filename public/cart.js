@@ -68,15 +68,15 @@ var cart = {
     });
   },
 
-  checkout : function (id) {
+  checkout : function (id,addr) {
   // checkout () : checkout
-
+   var addr =  document.getElementById("Addr").value;
     gen.ajax({
       target : "ajax-cart.php",
       data : {
         req : "checkout",
         CID : id,
-        Addr:  document.getElementById("Addr"+id).value
+        Addr: addr
       },
       silent : 1,
       load : function (res) {

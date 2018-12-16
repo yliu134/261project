@@ -257,7 +257,7 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
-                          $sql1 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row["Onum"];";
+                          // $sql1 = "SELECT Onum, FID, Quantity from ITEM WHERE Onum=$row["Onum"];";
                           // $result2 = $conn->query($sql1);
                           // if($result2 -> num_rows >0){
                           //   while ($row = $result->fetch_object()) {

@@ -27,13 +27,13 @@ session_write_close();
             header("Location:../index.php");
             session_write_close();
     ?>
-    
+
     <?php }else{ ?>
     <h2>Login to Your Account</h2>
     <?php echo !empty($statusMsg)?'<p class="'.$statusMsgType.'">'.$statusMsg.'</p>':''; ?>
     <div class="regisFrm">
         <form action="userAccount.php" method="post">
-            <input type="" name="CID" placeholder="YOUR ID" required="">
+            <input type="number" name="CID" placeholder="YOUR ID" required="">
             <input type="password" name="Password" placeholder="PASSWORD" required="">
             <div class="send-button">
                 <input type="submit" name="loginSubmit" value="LOGIN">
@@ -53,4 +53,3 @@ session_write_close();
     </div>
     <?php } ?>
 </div>
-

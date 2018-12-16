@@ -76,7 +76,7 @@ var cart = {
       data : {
         req : "checkout",
         CID : id,
-        Addr: document.getElementById("Addr").value
+        Addr: "documenue"
       },
       silent : 1,
       load : function (res) {

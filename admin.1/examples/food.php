@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 if(isset($_POST['AdminSubmit'])){
   if(md5($_POST['Password']) == md5('admin')){

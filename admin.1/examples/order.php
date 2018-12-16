@@ -218,21 +218,23 @@
 
                       if (!empty($_POST))
                       {
-                        $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS WHERE CID=$_POST[cid]";
+                        if (empty($_POST[cid]) {
+                          $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS";
+                        }else{
+                          $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS WHERE CID=$_POST[cid]";
+                        }
                       }else{
                         $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS";
                       }
 
-
-
                       $result = $conn->query($sql);
+
 
                       if($result -> num_rows > 0){
                         while ($row = $result -> fetch_assoc()){
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td></tr>";
                         }
-                      }
-                      else{
+                      }else{
                         echo "0 result";
                       }
 

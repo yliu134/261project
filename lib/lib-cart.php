@@ -43,9 +43,9 @@ class Cart extends DB {
     $this->start();
 
     // Create the order
-
-    $sql = "INSERT INTO `ORDERS` (`Addr`,`CID`,`LocID`) VALUES (?, ?, ?)";
-    $cond = [$Addr,$CID,$LocID];
+    $time = date("Y-m-d H:i:s");
+    $sql = "INSERT INTO `ORDERS` (`Addr`,`CID`,`LocID`,`Time`) VALUES (?, ?, ?, ?)";
+    $cond = [$Addr,$CID,$LocID,$time];
     $pass = $this->exec($sql, $cond);
 
     //Insert the items

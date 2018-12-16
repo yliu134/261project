@@ -17,13 +17,38 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 'Username' => $_POST['Username'],
                 'Pnum' => $_POST['Pnum']
             );
-            $row = $user->insert($userData);
-            //$newId =$row['CID'];
-            $newId ="dd";
-            //echo $newId."2222";
-            //$userData['CID'] = mysql_insert_id();
+            $insert = $user->insert($userData);
 
-            //set status based on data insert
+            $newId ="dd";
+
+
+
+            // <?php
+            // $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+            // if($conn->connect_error){
+            //   die("connection failed:". $conn-> connect_error);
+            // }
+            //
+            // $sql = "USE dpan6_3;";
+            // if ($conn->query($sql) === TRUE) {
+            //
+            // } else {
+            //    echo "Error using  database: " . $conn->error;
+            // }
+            //
+            // $sql = "SELECT CID FROM CUSTOMER ORDER BY CID DESC LIMIT 1";
+            // $result = $conn->query($sql);
+            //
+            // if($result -> num_rows > 0){
+            //   $row = $result -> fetch_assoc();
+            //   $newId = $row["CID"];
+            //   echo $newId;
+            // }
+            //
+            // $conn -> close();
+            // 
+
+
             if($insert){
                 $sessData['status']['type'] = 'success';
                 $sessData['status']['msg'] = 'Sign up successful! Your userID is '.$newId.'.';

@@ -35,15 +35,16 @@ session_write_close();
 
     <!-- [HEADER] -->
     <header id="page-header">
-      My Awesome Site
+      S.H.E group
       <div id="page-cart" onclick="cart.toggle();">
         &#128722; <span id="page-cart-count">0</span>
       </div>
 
-         <li>
+         <p>
             <a href="./admin.1/examples/myOrder.php">
               <button class="pdtAdd">My Orders</button>
             </a>
+<<<<<<< HEAD
 
              <a href="User/userAccount.php?logoutSubmit=1">
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
@@ -52,6 +53,9 @@ session_write_close();
               <button class="pdtAdd"> exit </button>
             </a>
         </li>
+=======
+        </p>
+>>>>>>> fb71826c29e17cc69a260b55700c3a266f116d5c
  <h1>
           hello Customer #
           <?php
@@ -64,9 +68,20 @@ session_write_close();
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 
+<<<<<<< HEAD
   <li>
 
           </li>
+=======
+  <p>
+            <a href="User/userAccount.php?logoutSubmit=1">
+              <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
+              $_SESSION = [];
+              ?>"></i>
+              <p align="right">exit </p>
+            </a>
+          </p>
+>>>>>>> fb71826c29e17cc69a260b55700c3a266f116d5c
 
 
     </header>
@@ -96,7 +111,7 @@ session_write_close();
 
     <!-- [FOOTER] -->
     <footer id="page-footer">
-      &copy; Copyright My Awesome Site. All rights reserved.
+      &copy; Copyright S.H.E group. All rights reserved.
     </footer>
   </body>
 </html>

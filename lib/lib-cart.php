@@ -50,6 +50,7 @@ class Cart extends DB {
     $pass = $this->exec($sql, $cond);
 
     //Insert the items
+    var_dump($_SESSION['cart']);
     if ($pass) {
       $sql = "INSERT INTO `ITEM` (`FID`, `Quantity`) VALUES ";
       $cond = [];

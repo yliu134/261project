@@ -37,7 +37,7 @@ session_write_close();
     <header id="page-header">
       S.H.E group
       <div id="page-cart" onclick="cart.toggle();">
-        &#128722; <span id="page-cart-count">0</span>
+       <span id="page-cart-count">0</span>
       </div>
 
          <p>

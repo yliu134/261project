@@ -397,6 +397,3 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 </body>
 
 </html>
-<?php
-  session_write_close();
-?>

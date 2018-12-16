@@ -38,7 +38,7 @@ class Cart extends DB {
   // ! READS DATA FROM SESSION CART !
 
     // Init
-    $LocID = 1;
+    $LocID = 5;
     $this->start();
 
     // Create the order

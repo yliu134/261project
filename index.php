@@ -51,7 +51,7 @@ session_write_close();
           <?php
  $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'];
 
-echo mysql_fetch_array($sql); 
+echo mysql_query($sql); 
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 

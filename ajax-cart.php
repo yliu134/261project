@@ -124,7 +124,7 @@ switch ($_POST['req']) {
       case "checkout":      
     // if ($cartLib->oAdd("test", "test2")) {
     //   $_SESSION['cart'] = array();
-       echo "OK";
+       echo "OKok";
     // } else {
     //   echo $cartLib->error;
     // }

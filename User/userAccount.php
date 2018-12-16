@@ -18,12 +18,13 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 'Pnum' => $_POST['Pnum']
             );
             $insert = $user->insert($userData);
-            $userData['CID'] = mysql_insert_id();
-            echo $userData['CID'];
+            $newId = MySql_Insert_Id ();
+            //$userData['CID'] = mysql_insert_id();
+            echo $newId;
             //set status based on data insert
             if($insert){
                 $sessData['status']['type'] = 'success';
-                $sessData['status']['msg'] = 'Sign up successful! Your userID is '.$userData['CID'].'.';
+                $sessData['status']['msg'] = 'Sign up successful! Your userID is '.$newId.'.';
                 $sessData['CID'] = $userData['CID'];
             }else{
                 $sessData['status']['type'] = 'error';

@@ -18,7 +18,8 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
                 'Pnum' => $_POST['Pnum']
             );
             $row = $user->insert($userData);
-            $newId =$row['CID'];
+            //$newId =$row['CID'];
+            $newId ="dd";
             //echo $newId."2222";
             //$userData['CID'] = mysql_insert_id();
 

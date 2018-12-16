@@ -49,10 +49,10 @@ session_write_close();
  <h1>
           hello
           <?  
- $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = ".$_SESSION['sessData']['CID'];
+ $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'];
 
 echo $sql; 
-          php echo $_SESSION['sessData']['CID']; ?>
+ echo $_SESSION['sessData']['CID']; ?>
 </h1>
 
   <li>

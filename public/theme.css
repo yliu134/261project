@@ -22,7 +22,7 @@ html, body {
   cursor: pointer;
 }
 
-/* [NOTIFICATION BOX] */
+/* [NOTIFICATION BOX] *//*
 #noteOut {
   position: fixed;
   width: 100%;
@@ -44,7 +44,7 @@ html, body {
 #noteOut.show {
   visibility: visible;
   opacity: 1;
-}
+}*/
 
 /* [PRODUCTS] */
 #products {

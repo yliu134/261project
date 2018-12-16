@@ -1,15 +1,3 @@
-<?php
-session_start();
-
-if (!empty($_SESSION['sessData']['loggedin']) && $_SESSION['sessData']['loggedin'] == true) {
-    echo "Welcome, administrator";
-} else {
-    session_destroy();
-    $_SESSION['sessData']['loggedin'] = false;
-    header("Location:../../User/login-reg.php");
-}
-session_write_close();
-?>
 <html lang="en">
 
 <head>

@@ -29,13 +29,31 @@ if ($conn->query($sql2) === FALSE)
 
   }
 
-echo "1 delivery group added";
+$message = '1 delivery group added..';
 
 
 
 mysql_close($conn)
 
 ?>
+<div class="content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="alert alert-info">
+                  <a href="./delivery.php">
+                  <button type="button" aria-hidden="true" class="close" data-dismiss="alert" aria-label="Close">
+                    <i class="tim-icons icon-check-2"></i>
+                  </button>
+                </a>
+                  <span><?php echo $message; ?></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </body>
 

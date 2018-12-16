@@ -53,8 +53,8 @@ session_write_close();
           $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
  $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'];
-
-echo $conn->query($sql); 
+ $result = $conn->query($sql);
+ echo $result; 
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 

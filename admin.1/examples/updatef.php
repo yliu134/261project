@@ -51,7 +51,7 @@ if ($conn->query($sql2) === FALSE)
 
   {
 
-  die('Error' . mysql_error());
+  die('Error: Please enter the correct name and price.' . mysql_error());
 
   }
 

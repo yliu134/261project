@@ -84,8 +84,8 @@
 						   echo "Error using  database: " . $conn->error;
 						}
 
-            echo $_SESSION['sessData']['CID'];
-                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = 1";
+            $iid = $_SESSION['sessData']['CID'];
+                       $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = $iid";
                       $result = $conn->query($sql);
 
                       if($result -> num_rows > 0){

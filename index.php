@@ -57,7 +57,7 @@ session_write_close();
         </p>
 
  <h1>
-          hello Customer #
+          hello Customer: 
           <?php
 
  //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
@@ -65,7 +65,8 @@ session_write_close();
  // $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
  // $result = $conn->query($sql);
  // echo $result;
- echo $_SESSION['sessData']['CID']; ?>
+ echo $_SESSION['sessData']['CID'];
+ ?>
 </h1>
 
 
@@ -73,14 +74,14 @@ session_write_close();
 
           </li>
 
-  <p>
+  <!-- <p>
             <a href="User/userAccount.php?logoutSubmit=1">
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
               $_SESSION = [];
               ?>"></i>
               <p align="right">exit </p>
             </a>
-          </p>
+          </p> -->
 
 
     </header>

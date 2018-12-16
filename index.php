@@ -57,15 +57,15 @@ session_write_close();
  <h1>
 
    <p>
+          <?php
 
-
- <!-- //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+ //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
  // $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
  // $result = $conn->query($sql);
- // echo $result; -->
- wwwwwww<?php echo $_SESSION['sessData']['CID'];?>
-
+ // echo $result;
+ echo "wwwwwww".$_SESSION['sessData']['CID'];
+ ?>
 </p>
 
 </h1>

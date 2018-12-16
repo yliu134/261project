@@ -43,23 +43,18 @@ class Cart extends DB {
     $this->start();
 
     // Create the order
+    $time = date("Y-m-d H:i:s");
 
-    $sql = "INSERT INTO `ORDERS` (`Addr`,`CID`,`LocID`) VALUES (?, ?, ?)";
-    $cond = [$Addr,$CID,$LocID];
+    $sql = "INSERT INTO `ORDERS` (`Addr`,`CID`,`LocID`,`Time`) VALUES (?, ?, ?,?)";
+    $cond = [$Addr,$CID,$LocID,$time];
     $pass = $this->exec($sql, $cond);
 
-    //Insert the items
-    //var_dump($_SESSION['cart']);
-    if ($pass) {
-      $sql = "INSERT INTO `ITEM` (`Onum`,`FID`, `Quantity`) VALUES ";
-      $cond = [];
-      foreach ($_SESSION['cart'] as $id=>$qty) {
-        $sql .= "(?, ?, ?),";
-        array_push($cond, $this-> lastID, $id, $qty);
-      }
-      $sql = substr($sql, 0, -1) . ";"; // strip last comma
-      $pass = $this->exec($sql, $cond);
-    }
+    //Insert the items     //var_dump($_SESSION['cart']);     if ($pass)
+$sql = "INSERT INTO `ITEM` (`Onum`,`FID`, `Quantity`) VALUES ";       $cond =
+[];       foreach ($_SESSION['cart'] as $id=>$qty) {         $sql .= "(?, ?,
+?),";         array_push($cond, $this-> lastID, $id, $qty);       }       $sql
+= substr($sql, 0, -1) . ";"; // strip last comma       $pass =
+$this->exec($sql, $cond);     }
 
     // Finalize
     $this->end($pass);

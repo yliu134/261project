@@ -253,7 +253,7 @@ session_write_close();
 
 
                       if($result -> num_rows > 0){
-                        $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button><div class=\"dropdown-menu\">";
+                        $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Details</button><div class=\"dropdown-menu\">";
 
 
 
@@ -272,7 +272,15 @@ session_write_close();
                               $m .= "<a class=\"dropdown-item\">";
                               $m .= $row2["Onum"];
                               $m .= "--";
-                              $m .= $row2["FID"];
+                              $sql3 = "SELECT Fname from FOOD WHERE FID=". $row2["FID"];
+                              $result3 = $conn->query($sql3);
+                              if($result3 -> num_rows > 0){
+                                while ($row3 = $result3 -> fetch_assoc()){
+                                  $m .= $row3["Fname"];
+                                }
+                              }else{
+                                $m .= "N/A";
+                              }
                               $m .= "--";
                               $m .= $row2["Quantity"];
                               $m .= "</a>";

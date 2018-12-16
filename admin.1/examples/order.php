@@ -265,10 +265,11 @@ session_write_close();
 
                         $part2="<div class=\"dropdown-divider\"></div><a class=\"dropdown-item\" href=\"#\">Separated link</a></div>";
 
-                        $m2 = "<div></div>";
+                        $m2 = "<div>";
+                        $m3 = "</div>";
 
                         while ($row = $result -> fetch_assoc()){
-                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $m2 ."</td></tr>";
+                          echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $m2 ."".$m3."</td></tr>";
                         }
                       }else{
                         echo "0 result";

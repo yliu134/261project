@@ -34,7 +34,7 @@ foreign key (CID) references CUSTOMER(CID)
         ON UPDATE CASCADE
 );
 create table ITEM (
-Onum INT NOT NULL AUTO_INCREMENT,
+Onum INT NOT NULL,
 FID INT NOT NULL,
 Quantity INT NOT NULL,
 foreign key (Onum) references ORDERS(Onum)

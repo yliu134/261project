@@ -1,4 +1,5 @@
 <?php
+session_start();
 class Cart extends DB {
   /* [PRODUCTS] */
   function pGet () {
@@ -48,17 +49,18 @@ class Cart extends DB {
     $cond = [$Addr,$CID,$LocID];
     $pass = $this->exec($sql, $cond);
 
-    // Insert the items
-    // if ($pass) {
-    //   $sql = "INSERT INTO `ITEM` (`FID`, `Quantity`) VALUES ";
-    //   $cond = [];
-    //   foreach ($_SESSION['cart'] as $id=>$qty) {
-    //     $sql .= "(?, ?),";
-    //     array_push($cond, $this-> $id, $qty);
-    //   }
-    //   $sql = substr($sql, 0, -1) . ";"; // strip last comma
-    //   $pass = $this->exec($sql, $cond);
-    // }
+    //Insert the items
+    var_dump($_SESSION['cart']);
+    if ($pass) {
+      $sql = "INSERT INTO `ITEM` (`Onum`,`FID`, `Quantity`) VALUES ";
+      $cond = [];
+      foreach ($_SESSION['cart'] as $id=>$qty) {
+        $sql .= "(?, ?, ?),";
+        array_push($cond, $this-> $id, $qty);
+      }
+      $sql = substr($sql, 0, -1) . ";"; // strip last comma
+      $pass = $this->exec($sql, $cond);
+    }
 
     // Finalize
     $this->end($pass);

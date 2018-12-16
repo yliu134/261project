@@ -45,7 +45,7 @@ class Cart extends DB {
     echo $CID; 
     echo $Addr;
     $sql = "INSERT INTO `ORDERS` (`Addr`,`CID`,`LocID`) VALUES (?, ?, ?)";
-    $cond = [$Addr,10,$LocID];
+    $cond = [$Addr,$CID,$LocID];
     $pass = $this->exec($sql, $cond);
 
     // Insert the items

@@ -2,7 +2,8 @@
 session_start();
 var_dump($_SESSION);
 echo session_id();
-echo ini_get('session.cookie_domain');
+var_dump($_POST);
+$_SESSION['loggedin']= true;
 if(isset($_POST['a'])){
     $_SESSION['loggedin']= true;
  }

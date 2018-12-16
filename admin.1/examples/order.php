@@ -253,7 +253,7 @@ session_write_close();
 
 
                       if($result -> num_rows > 0){
-                        $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button><div class=\"dropdown-menu\">";
+                        $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Details</button><div class=\"dropdown-menu\">";
 
 
 

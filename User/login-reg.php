@@ -49,7 +49,6 @@ session_write_close();
                 <input type="submit" name="AdminSubmit" value="ADMIN_LOGIN">
             </div>
         </form>
-        <p>Admin Log in?<a href="registration.php">Admin</a></p>
     </div>
     <?php } ?>
 </div>

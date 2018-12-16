@@ -66,7 +66,7 @@ switch ($_POST['req']) {
       <?php
       foreach ($_SESSION['cart'] as $id => $qty) {
                 // CALCULATE THE TOTALS
-        echo $id;
+       // echo $id;
         $sub = $qty * $products[$id]['Fprice'];
         $total += $sub;
         // THE PRODUCT

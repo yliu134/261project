@@ -60,7 +60,7 @@ session_write_close();
             </a>
           </li>
           <li >
-            <a href="./order.php?a=1">
+            <a href="./order.php">
               <i class="tim-icons icon-calendar-60"></i>
               <p>Orders</p>
             </a>

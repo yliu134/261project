@@ -42,7 +42,7 @@ session_write_close();
 
          <li>
             <a href="./admin.1/examples/myOrder.php">
-              <button class="pdtAdd">My Orders</button>
+              <p>My Orders</p>
             </a>
         </li>
  <h1>
@@ -62,7 +62,7 @@ session_write_close();
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
               $_SESSION = [];
               ?>"></i>
-              <button class="pdtAdd">Log out</button>
+              <p>exit </p>
             </a>
           </li>
 

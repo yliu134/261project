@@ -42,10 +42,9 @@ session_write_close();
 
          <li>
             <a href="./admin.1/examples/myOrder.php">
-              <i class="tim-icons icon-bus-front-12"></i>
-              <p>My Orders</p>
+              <button class="pdtAdd">My Orders</button>
             </a>
-          </li>
+        </li>
  <h1>
           hello
           <?php
@@ -54,7 +53,7 @@ session_write_close();
 
  $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
  $result = $conn->query($sql);
- echo $result; 
+ echo $result;
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 

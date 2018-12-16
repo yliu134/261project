@@ -95,8 +95,8 @@ class User{
             }
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
             $insert = $this->db->query($query);
-            //$last_id = $this->db->insert_id();
-            return $insert;
+            $last_id = $this->db->insert_id();
+            return $last_id;
         }else{
             return false;
         }

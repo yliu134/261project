@@ -71,7 +71,7 @@ switch ($_POST['req']) {
         $total += $sub;
         // THE PRODUCT
         console_log($_SESSION['cart']);
-        printf("<tr><td><input id='qty_%u' onchange='cart.change(%u);' type='number' value='%u'/></td><td>%s</td><td>$%0.2f</td></tr>", $id, $id, $qty, $products[$id]['Fname'], $sub
+        printf("<tr><td><input id='qty_%u' type='number' value='%u'/></td><td>%s</td><td>$%0.2f</td></tr>", $id, $id, $qty, $products[$id]['Fname'], $sub
         );
       }
       ?>
@@ -125,8 +125,8 @@ switch ($_POST['req']) {
      if ($cartLib->oAdd($_SESSION['sessData']['CID'], $_POST['Addr'])) {
        $_SESSION['cart'] = array();
         // session_destroy();
-        //echo "Order submitted";
-        header("Location:User/login-reg.php");
+        echo "Order submitted";
+        //header("Location:User/login-reg.php");
 
      } else {
        echo "There is an error";

@@ -46,7 +46,7 @@ if(!empty($_POST['Password']) && !empty($_POST['Pnum']) && !empty($_POST['Userna
             // }
             //
             // $conn -> close();
-            // ?>
+            // 
 
 
             if($insert){

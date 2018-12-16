@@ -43,7 +43,7 @@ switch ($_POST['req']) {
     } else {
       $_SESSION['cart'][$_POST['FID']] = 1;
     }
-    echo "Item added to cart";
+    echo "Item added to cart test";
     break;
 
   // SHOW CART

@@ -96,8 +96,8 @@ class User{
             $query = "INSERT INTO ".$this->userTbl." (".$columns.") VALUES (".$values.")";
             $insert = $this->db->query($query);
             $last = mysql_insert_id();
-            $insert = ($insert?) $last:false;
-            return $insert;
+            $ret = ($insert?) $last:false;
+            return $ret;
         }else{
             return false;
         }

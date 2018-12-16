@@ -12,10 +12,11 @@ if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
     session_destroy(); 
-    $_SESSION = [];
+    $_SESSION['loggedin'] = NULL;
     header("Location:../../User/login-reg.php");
+    session_write_close();
 }
-session_write_close();
+
 ?>
 
 <!DOCTYPE html>
@@ -396,3 +397,6 @@ session_write_close();
 </body>
 
 </html>
+<?php
+  session_write_close();
+?>

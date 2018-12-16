@@ -1,5 +1,6 @@
 <?php
 session_start();
+var_dump($_SESSION);
 if(isset($_POST['AdminSubmit'])){
   if(md5($_POST['Password']) == md5('admin')){
     $_SESSION['sessData']['loggedin'] = true;

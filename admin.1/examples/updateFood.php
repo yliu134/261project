@@ -177,7 +177,7 @@
           <div class="card">
             <div class="card-header">
               <h5 class="title">Update Form</h5>
-              <h8 class="title">Note: You cannot delete a food that has been ordered before.</h8>
+              <h2 class="title">Note: You cannot delete a food that has been ordered before.</h2>
             </div>
             <form action="./updatef.php" method="POST">
               <?php

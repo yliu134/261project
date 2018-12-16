@@ -37,7 +37,7 @@ session_write_close();
     <header id="page-header">
       S.H.E group
       <div id="page-cart" onclick="cart.toggle();">
-       <span id="page-cart-count">0</span>
+        &#128722; <span id="page-cart-count">0</span>
       </div>
 
          <p>
@@ -57,10 +57,15 @@ session_write_close();
  <h1>
 
    <p>
+          <?php
 
+ //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
-<?php echo $_SESSION['sessData']['CID'];?>
-
+ // $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
+ // $result = $conn->query($sql);
+ // echo $result;
+ echo "wwwwwww".$_SESSION['sessData']['CID'];
+ ?>
 </p>
 
 </h1>

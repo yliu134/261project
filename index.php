@@ -52,9 +52,12 @@ session_write_close();
 
           $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
- $sql = "SELECT Username from CUSTOMER where CID = ".$_SESSION['sessData']['CID'].";";
+ $sql = "SELECT Username from CUSTOMER where CID = ".$_SESSION['sessData']['CID'];
  $result = $conn->query($sql);
- echo $result; 
+ $row = $result -> fetch_assoc();
+ echo $row[1]; 
+  echo $row[0]; 
+
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 

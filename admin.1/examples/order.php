@@ -255,7 +255,7 @@ session_write_close();
                       if($result -> num_rows > 0){
                         $part1="<div class=\"btn-group\"><button type=\"button\" class=\"btn btn-primary dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Action</button><div class=\"dropdown-menu\">";
 
-                          $m = "";
+                          $m = "<a class=\"dropdown-item\">items:</a>";
 
                         $part2="</div></div>";
 
@@ -266,7 +266,10 @@ session_write_close();
                           if($result2 -> num_rows > 0){
                             while ($row2 = $result2 -> fetch_assoc()){
                               //$m = $m. "<a class=\"dropdown-item\">".$row2["Onum"]."-".$row2["FID"]."-".$row2["Quantity"]."</a>";
-                              $m .= "<a class=\"dropdown-item\">items:</a>";
+                              $m .= "<a class=\"dropdown-item\">";
+                              //$m .= $row2["Onum"];
+                              $m .= "</a>";
+                              echo $m;
                             }
                           }
                           echo "<tr><td>". $row["Onum"] ."</td><td>". $row["Addr"] ."</td><td>". $row["Time"] ."</td><td>". $row["LocID"] ."</td><td>". $row["CID"] ."</td><td>". $part1 ."".$m."".$part2."</td></tr>";

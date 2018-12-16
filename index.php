@@ -60,19 +60,19 @@ session_write_close();
           hello Customer #
           <?php
 
-          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
+ //          $conn = mysqli_connect("localhost", "dpan6", "%NNN5m-A");
 
- $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
- $result = $conn->query($sql);
- echo $result;
+ // $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'].";";
+ // $result = $conn->query($sql);
+ // echo $result;
  echo $_SESSION['sessData']['CID']; ?>
 </h1>
 
-<<<<<<< HEAD
+
   <li>
 
           </li>
-=======
+
   <p>
             <a href="User/userAccount.php?logoutSubmit=1">
               <i class="tim-icons icon-bus-front-12" onclick = "<?php session_destroy();
@@ -81,7 +81,6 @@ session_write_close();
               <p align="right">exit </p>
             </a>
           </p>
->>>>>>> fb71826c29e17cc69a260b55700c3a266f116d5c
 
 
     </header>

@@ -42,7 +42,7 @@ session_write_close();
 
          <li>
             <a href="./admin.1/examples/myOrder.php">
-              <p>My Orders</p>
+              <button class="pdtAdd">My Orders</button>
             </a>
         </li>
  <h1>

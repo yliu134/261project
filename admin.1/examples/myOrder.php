@@ -60,7 +60,7 @@
                           Address
                         </th>
                         <th>
-                          Time <?php $_SESSION['sessData']['CID']?>
+                          Time 
                         </th>
                         <th>
                           Delivery Group
@@ -85,6 +85,7 @@
 						}
 
             $iid = $_SESSION['sessData']['CID'];
+            var_dump($iid);
                        $sql = "SELECT Onum, Addr, Time, LocID, CID from ORDERS where CID = $iid";
                       $result = $conn->query($sql);
 

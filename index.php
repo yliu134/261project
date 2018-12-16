@@ -48,7 +48,11 @@ session_write_close();
           </li>
  <h1>
           hello
-          <?php echo $_SESSION['sessData']['CID']; ?>
+          <?php
+ $sql = "SELECT Username from CUTOMER where CID = ".$_SESSION['sessData']['CID'];
+
+echo $sql; 
+ echo $_SESSION['sessData']['CID']; ?>
 </h1>
 
   <li>

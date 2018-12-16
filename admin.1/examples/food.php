@@ -1,12 +1,12 @@
-<?
+<?php
 session_start();
 if(isset($_POST['AdminSubmit'])){
-  if(md5($_POST['AdminSubmit']) == md5('admin')){
+  if(md5($_POST['Password']) == md5('admin')){
     $_SESSION['loggedin'] = true;
   }
 }
 
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+if (!empty($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     echo "Welcome, administrator";
 } else {
     header("Location:../../User/login-reg.php");
